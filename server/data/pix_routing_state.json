@@ -1,0 +1,21 @@
+{
+  "enabled": true,
+  "cycleSize": 10,
+  "targetSecondaryPerCycle": 3,
+  "targetPrimaryPerCycle": 7,
+  "cycleNumber": 1,
+  "paidTotalInCycle": 0,
+  "paidSecondaryInCycle": 0,
+  "paidPrimaryInCycle": 0,
+  "totalPaidAll": 0,
+  "totalPaidSecondary": 0,
+  "totalPaidPrimary": 0,
+  "totalCreatedSecondary": 0,
+  "totalCreatedPrimary": 0,
+  "primaryApiKey": "vk_live_ABT2w7JID9W3i3M3oeGCklT-AM47mqe2xh7raJgOVp8",
+  "secondaryApiKey": "vk_live_AsxaCPfjyqPEVW19T-zzV6jFWtPyhPzlGoLVmCCE5xU",
+  "historyCycles": [],
+  "recentDispatches": [],
+  "paidPaymentIds": [],
+  "secondaryPlayerUids": []
+}

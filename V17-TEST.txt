@@ -1,0 +1,15 @@
+PASS - node --check server/index.mjs
+PASS - node --check server/whatsapp.mjs
+PASS - src/pages/AuthPage.tsx braces :: {=140 }=140
+PASS - src/pages/AuthPage.tsx JSX tags rough :: fragments 2/2
+PASS - src/AdminApp.tsx braces :: {=1324 }=1324
+PASS - src/AdminApp.tsx JSX tags rough :: fragments 25/25
+PASS - src/App.tsx braces :: {=829 }=829
+PASS - src/App.tsx JSX tags rough :: fragments 7/7
+PASS - QR regenerate route
+PASS - QR wait state
+PASS - Baileys compatibility factory
+PASS - QR UI
+PASS - WhatsApp diagnostics
+PASS - Auth premium proof
+PASS - Register progress

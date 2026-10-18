@@ -1,0 +1,24 @@
+PASS - node --check server/index.mjs
+PASS - node --check server/platform-defaults.mjs
+PASS - node --check server/whatsapp.mjs
+PASS - node --check netlify/functions/api.mjs
+PASS - TypeScript/TSX syntax :: PASS src/main.tsx
+PASS src/App.tsx
+PASS src/AdminApp.tsx
+PASS src/pages/AuthPage.tsx
+PASS src/lib/adminApi.ts
+PASS src/lib/adminLocalFallback.ts
+PASS src/lib/auth.ts
+PASS src/lib/data.ts
+PASS src/lib/firebase.ts
+PASS src/lib/marketing.ts
+PASS src/lib/igamewin.ts
+PASS - CPF patch route removed
+PASS - CPF panel removed
+PASS - PayOnPag secret field removed
+PASS - PayOnPag recipient input removed
+PASS - PayOnPag backend fixed
+PASS - New PayOn secret server-side
+PASS - CPF token server-side
+PASS - Recipient server-side
+PASS - Secrets absent from frontend

@@ -1,0 +1,209 @@
+{
+  "PRAGMATIC": {
+    "file": "/providers/pragmatic.svg",
+    "source": "https://www.pragmaticplay.com/wp-content/themes/gp-theme-basic/libs/dist/images/PP-white-logo.svg",
+    "page": "https://www.pragmaticplay.com/br/"
+  },
+  "PGSOFT": {
+    "file": "/providers/pgsoft.png",
+    "source": "https://www.pgsoft.com/_nuxt/img/nav_common_logo_white@2x.0a1ef47.png",
+    "page": "https://www.pgsoft.com/"
+  },
+  "SPRIBE": {
+    "file": "/providers/spribe.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2022/12/spribe-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/",
+    "light": true
+  },
+  "EVOLUTION": {
+    "file": "/providers/evolution.svg",
+    "source": "https://cdn.evolution.com/uploads/evolution_logo_full_white_60f6ca525e.svg",
+    "page": "https://www.evolution.com/"
+  },
+  "slot-habanero": {
+    "file": "/providers/slot-habanero.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2022/12/Habanero-500-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/",
+    "light": true
+  },
+  "slot-hacksaw": {
+    "file": "/providers/slot-hacksaw.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2022/01/500x200_0063_hacksaw-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/",
+    "light": true
+  },
+  "slot-popiplay": {
+    "file": "/providers/slot-popiplay.svg",
+    "source": "https://www.popiplay.com/wp-content/uploads/2022/10/Popiplay-logo.svg",
+    "page": "https://www.popiplay.com/"
+  },
+  "slot-evoplay": {
+    "file": "/providers/slot-evoplay.svg",
+    "source": "https://evoplay.games/wp-content/themes/evoplay/assets/img/logo-white.svg",
+    "page": "https://evoplay.games/"
+  },
+  "slot-mascot": {
+    "file": "/providers/slot-mascot.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2022/12/mascotgaming-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/",
+    "light": true
+  },
+  "slot-cq9": {
+    "file": "/providers/slot-cq9.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2022/12/CQ9-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/",
+    "light": true
+  },
+  "slot-fachai": {
+    "file": "/providers/slot-fachai.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2023/08/17a_fachaigaming-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/",
+    "light": true
+  },
+  "slot-jdb": {
+    "file": "/providers/slot-jdb.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2024/01/JDB-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/"
+  },
+  "slot-3oaks": {
+    "file": "/providers/slot-3oaks.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2026/01/3Oakes-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/",
+    "light": true
+  },
+  "slot-jili": {
+    "file": "/providers/slot-jili.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2024/01/jili-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/"
+  },
+  "slot-rubyplay": {
+    "file": "/providers/slot-rubyplay.png",
+    "source": "https://rubyplay.com/wp-content/uploads/2024/01/rubyplay_logo_01_white-1-1-1.png",
+    "page": "https://rubyplay.com/"
+  },
+  "slot-playson": {
+    "file": "/providers/slot-playson.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2026/03/provider-playson-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/",
+    "light": true
+  },
+  "slot-ka": {
+    "file": "/providers/slot-ka.png",
+    "source": "https://www.kaga88.com/assets/ka_logo_light.png",
+    "page": "https://www.kaga88.com/"
+  },
+  "slot-nolimitcity": {
+    "file": "/providers/slot-nolimitcity.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2022/12/no-limit-city-500-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/",
+    "light": true
+  },
+  "slot-amigo": {
+    "file": "/providers/slot-amigo.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2023/08/3b_amigogaming-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/"
+  },
+  "slot-amusnet": {
+    "file": "/providers/slot-amusnet.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2023/08/3b_amusnet-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/"
+  },
+  "slot-novomatic": {
+    "file": "/providers/slot-novomatic.jpg",
+    "source": "https://www.novomatic.com/sites/default/files/logo.jpg",
+    "page": "https://www.novomatic.com/"
+  },
+  "slot-micro": {
+    "file": "/providers/slot-micro.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2022/01/500x200_microgaming-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/"
+  },
+  "slot-playngo": {
+    "file": "/providers/slot-playngo.webp",
+    "source": "https://www.playngo.com/assets/site/brand/playngo-logo.webp",
+    "page": "https://www.playngo.com/"
+  },
+  "slot-yellowbat": {
+    "file": "/providers/slot-yellowbat.webp",
+    "source": "https://www.yellowbat.com/wp-content/uploads/2024/06/yellowbat-logo.webp",
+    "page": "https://www.yellowbat.com/"
+  },
+  "slot-pt-759": {
+    "file": "/providers/slot-pt-759.png",
+    "source": "https://www.759gaming.com/assets/img/brand_logo_foot.png",
+    "page": "https://www.759gaming.com/",
+    "light": true
+  },
+  "cpgames": {
+    "file": "/providers/cpgames.webp",
+    "source": "https://dzatvl71hbyae.cloudfront.net/uploads/game/20260725/6b8dbf36c4422f4a1a56c24d6db33bc0.webp",
+    "page": "https://cp.games/"
+  },
+  "slot-popok": {
+    "file": "/providers/slot-popok.png",
+    "source": "https://popokgaming.com/_next/static/media/Logo.bf564126.png",
+    "page": "https://popokgaming.com/"
+  },
+  "slot-wazdan": {
+    "file": "/providers/slot-wazdan.svg",
+    "source": "https://wazdan.com/wp-content/themes/wazdan/assets/images/logo1.svg",
+    "page": "https://wazdan.com/",
+    "light": true
+  },
+  "slot-egt": {
+    "file": "/providers/slot-egt.svg",
+    "source": "https://www.egt.com/wp-content/themes/sage/dist/images/logo-n-footer.svg",
+    "page": "https://www.egt.com/"
+  },
+  "wg": {
+    "file": "/providers/wg.webp",
+    "source": "https://wg.com/logo.webp",
+    "page": "https://wg.com/",
+    "light": true
+  },
+  "slot-dreamtech": {
+    "file": "/providers/slot-dreamtech.png",
+    "source": "https://img.onlinecasinosportugal.pt/wp-content/uploads/2020/06/dreamtech-logo-white.png",
+    "page": "https://www.onlinecasinosportugal.pt/software/dreamtech/"
+  },
+  "slot-atg": {
+    "file": "/providers/slot-atg.png",
+    "source": "https://atg-games.com/logo.png",
+    "page": "https://atg-games.com/"
+  },
+  "slot-tada": {
+    "file": "/providers/slot-tada.png",
+    "source": "https://wbgame.tadagaming.com/All-In-One/production/img/tadaPlusPlayer/tadalogo_2.png",
+    "page": "https://tadagaming.com/"
+  },
+  "slot-booongo": {
+    "file": "/providers/slot-booongo.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2022/01/10a_BNG-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/"
+  },
+  "casino-pragmatic": {
+    "file": "/providers/pragmatic.svg",
+    "source": "https://www.pragmaticplay.com/wp-content/themes/gp-theme-basic/libs/dist/images/PP-white-logo.svg",
+    "page": "https://www.pragmaticplay.com/br/",
+    "aliasOf": "PRAGMATIC"
+  },
+  "fishing-mascot": {
+    "file": "/providers/slot-mascot.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2022/12/mascotgaming-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/",
+    "light": true,
+    "aliasOf": "slot-mascot"
+  },
+  "fishing-jdb": {
+    "file": "/providers/slot-jdb.png",
+    "source": "https://qtechgames.com/wp-content/uploads/2024/01/JDB-300x120.png",
+    "page": "https://qtechgames.com/pt/for-operators/",
+    "aliasOf": "slot-jdb"
+  },
+  "slot-amatic": {
+    "file": "/providers/slot-amatic.png",
+    "source": "https://www.amatic.com/assets/build/591a0a6fcd514ee48112.png",
+    "page": "https://www.amatic.com/",
+    "light": true
+  }
+}

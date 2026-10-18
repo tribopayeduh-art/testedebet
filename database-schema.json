@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "projectId": "amorabet-f4405",
+  "adminAuthorization": {
+    "source": "ADMIN_EMAILS/ADMIN_UIDS",
+    "defaultEmail": "admin.eduh@gmail.com"
+  },
+  "cpf": {
+    "mode": "MANUAL",
+    "required": true,
+    "digits": 11,
+    "externalApi": false
+  },
+  "collections": [
+    "users",
+    "system",
+    "system_private",
+    "public_config",
+    "payment_requests",
+    "payment_provider_logs",
+    "game_transactions",
+    "wallet_adjustments",
+    "recent_games",
+    "promotions",
+    "bonuses",
+    "bonus_grants",
+    "affiliates",
+    "notification_campaigns",
+    "user_notifications",
+    "supportTickets",
+    "kyc_requests",
+    "responsible_gaming_events",
+    "banner_campaigns",
+    "banner_events",
+    "whatsapp_campaigns",
+    "whatsapp_message_logs",
+    "winners_demo",
+    "experiments",
+    "game_overrides",
+    "language_bonus_claims",
+    "admin_audit_logs"
+  ],
+  "seedDocuments": [
+    "system/settings",
+    "system/winners_config",
+    "system/home_layout",
+    "public_config/marketing_tracking",
+    "system_private/payonpag",
+    "system_private/igamewin",
+    "system_private/cpf_api"
+  ],
+  "firebase": {
+    "authDomain": "amorabet-f4405.firebaseapp.com",
+    "databaseURL": "https://amorabet-f4405-default-rtdb.firebaseio.com",
+    "storageBucket": "amorabet-f4405.firebasestorage.app",
+    "messagingSenderId": "559598024702",
+    "appId": "1:559598024702:web:f9f028a9fb25100443f2af",
+    "measurementId": "G-D9W41Y9917"
+  }
+}

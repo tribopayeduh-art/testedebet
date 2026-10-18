@@ -1,0 +1,14 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - TypeScript/TSX
+PASS - No undefined snap in settings
+PASS - Brazil default
+PASS - No locale localStorage
+PASS - BR never shows bonus strip
+PASS - Russia admin toggle
+PASS - Japan admin toggle
+PASS - Backend locale gating
+PASS - Client locale gating
+PASS - Rules Russia gating
+PASS - Rules Japan gating
+PASS - Friendly technical error

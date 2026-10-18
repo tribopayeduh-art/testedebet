@@ -1,0 +1,12 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - netlify/functions/api.mjs
+PASS - TypeScript/TSX :: PASS src/App.tsx
+PASS src/AdminApp.tsx
+PASS src/pages/AuthPage.tsx
+PASS - Banner endpoint safe 200
+PASS - Banner event best effort
+PASS - Deposit query amount
+PASS - Deposit amount header
+PASS - Deposit amount body
+PASS - Backend query priority

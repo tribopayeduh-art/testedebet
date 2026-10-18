@@ -1,0 +1,14 @@
+V21.1 NETLIFY BUILD FIX
+
+PASS - TS18047 AdminApp user possibly null: currentUser captured after null guard
+PASS - TS2345 React useEffect: async loaders wrapped with void load()
+PASS - IGameWinGame provider_code -> providerCode
+PASS - IGameWinGame provider_name -> providerName
+PASS - IGameWinGame game_name -> name
+PASS - UserProfile totalDeposits added
+PASS - Firestore listCol returns Promise<AnyObj[]> instead of inferred {id:string}[]
+PASS - server/index.mjs node --check
+PASS - server/whatsapp.mjs node --check
+PASS - netlify/functions/api.mjs node --check
+PASS - TypeScript/TSX syntax parser for main application files
+PASS - build command remains tsc -b && vite build

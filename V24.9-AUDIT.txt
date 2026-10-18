@@ -1,0 +1,13 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - TypeScript/TSX
+PASS - Friendly ADC handling
+PASS - Public settings REST fallback
+PASS - Client transaction fallback
+PASS - App uses automatic fallback
+PASS - Exact claim document rule
+PASS - existsAfter atomic protection
+PASS - Exact wallet increment rule
+PASS - Deposit eligibility in rules
+PASS - Admin email rule
+PASS - Firebase rules npm command

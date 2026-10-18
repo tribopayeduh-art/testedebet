@@ -1,0 +1,148 @@
+# Revisão do painel ZeroBet
+
+## Resultado
+Compilação de produção aprovada. Verificação sintática do admin e servidor aprovada. 16 testes locais passaram (11 existentes e 5 novos testes de carteira com Firestore simulado). Não houve gravação em contas reais, pagamentos ou provedores.
+
+## Correções
+- Débito maior que o saldo é recusado e não gera histórico incorreto.
+- Operações de carteira e histórico são atômicas. Sem credencial Admin, o backend delega explicitamente à transação do SDK Firebase no navegador, sujeita às regras publicadas.
+- Ajuste, bônus e zerar saldo usam chave para impedir repetição da mesma solicitação.
+- Falhas de rede ou erros após uma gravação não acionam automaticamente outro caminho de gravação.
+- Respostas negadas por permissão não são contornadas pelo fallback.
+- Reconciliação de jogadores limitada à listagem, preservando respostas de detalhes.
+- Alteração de cargos reconhece claims admin; revogação remove isAdmin e registro em admins.
+- Alterações de acesso requerem credencial Admin e deixam de exibir sucesso quando o Firebase Authentication falha.
+- Resumos e relatórios do fallback contabilizam depósitos/saques liquidados, excluindo pendentes e rejeitados do volume realizado.
+
+## Limitações e validação pendente
+Não é possível garantir 100% apenas com testes locais. Ainda é necessário testar com conta admin real, regras publicadas e credencial Admin: lista/pesquisa e detalhes de jogadores; crédito/débito/bônus/zerar; atualização e bloqueio de contas; cargos; aprovações de pagamentos; KYC; suporte; afiliados; jogos; campanhas; configurações; imagens; notificações; WhatsApp; fornecedor e gateway. O backend e o Firestore ainda usam uma lista fixa de administradores: revogar um cargo não remove uma conta dessas listas de configuração. Não remover o próprio acesso sem outra conta administrativa.
+
+O ajuste direto no navegador atualiza a carteira Firebase, mas não confirma sincronização com o saldo externo do fornecedor. O backend também ainda possui operações legadas via REST fora das três operações de carteira corrigidas; exigem validação de concorrência com o ambiente real. Relatórios via fallback têm limites de leitura e não equivalem a uma auditoria contábil completa. As telas e animações não foram verificadas visualmente em navegador nesta revisão.
+
+## Rotas administrativas encontradas no servidor
+- GET /api/admin/igamewin/diagnostics
+- GET /api/admin/me
+- POST /api/admin/bootstrap-defaults
+- GET /api/admin/system-readiness
+- GET /api/admin/dashboard
+- GET /api/admin/users
+- PATCH /api/admin/users/:uid
+- POST /api/admin/users/:uid/wallet-adjustment
+- GET /api/admin/users/:uid/details
+- POST /api/admin/users/:uid/zero-balance
+- POST /api/admin/users/:uid/tags
+- GET /api/admin/leads/restore-status
+- GET /api/admin/restorage/status
+- GET /api/admin/leads/archived
+- GET /api/admin/restorage/list
+- POST /api/admin/leads/run-cleanup
+- POST /api/admin/restorage/run-cleanup
+- POST /api/admin/leads/restore-user/:uid
+- POST /api/admin/restorage/restore/:uid
+- POST /api/admin/leads/restore-as-influencer/:uid
+- POST /api/admin/restorage/restore-vip/:uid
+- POST /api/admin/leads/purge-archived
+- POST /api/admin/restorage/purge
+- PATCH /api/admin/leads/settings
+- GET /api/admin/finance/queue-config
+- PATCH /api/admin/finance/queue-config
+- GET /api/admin/payments
+- PATCH /api/admin/payments/:id
+- POST /api/admin/payments/:id/reconcile
+- POST /api/admin/payments/:id/approve
+- GET /api/admin/support
+- PATCH /api/admin/support/:id
+- GET /api/admin/promotions
+- POST /api/admin/promotions
+- PATCH /api/admin/promotions/:id
+- DELETE /api/admin/promotions/:id
+- GET /api/admin/settings
+- PATCH /api/admin/settings
+- GET /api/admin/igamewin/status
+- POST /api/admin/igamewin/refresh-catalog
+- GET /api/admin/igamewin/game-logs
+- POST /api/admin/igamewin/user-create
+- POST /api/admin/igamewin/user-deposit
+- POST /api/admin/igamewin/user-withdraw
+- POST /api/admin/igamewin/withdraw-reset
+- POST /api/admin/igamewin/rtp
+- GET /api/admin/audit
+- GET /api/admin/kyc
+- PATCH /api/admin/kyc/:uid
+- GET /api/admin/risk
+- POST /api/admin/risk/:uid/action
+- GET /api/admin/affiliates
+- POST /api/admin/affiliates
+- PATCH /api/admin/affiliates/:id
+- GET /api/admin/bonuses
+- POST /api/admin/bonuses
+- PATCH /api/admin/bonuses/:id
+- DELETE /api/admin/bonuses/:id
+- POST /api/admin/users/:uid/grant-bonus
+- GET /api/admin/notifications
+- POST /api/admin/notifications
+- PATCH /api/admin/notifications/:id
+- GET /api/admin/game-overrides
+- PATCH /api/admin/game-overrides/:key
+- GET /api/admin/reports
+- GET /api/admin/staff
+- POST /api/admin/staff/:uid/role
+- POST /api/admin/staff/:uid/disable
+- GET /api/admin/responsible-gaming
+- POST /api/admin/notifications/:id/publish
+- GET /api/admin/finance/dashboard
+- POST /api/admin/finance/sync
+- GET /api/admin/operations/health
+- POST /api/admin/assets
+- GET /api/admin/configuration
+- PATCH /api/admin/configuration
+- POST /api/admin/simulate-withdraw-fees
+- GET /api/admin/kyc-requests
+- GET /api/admin/banner-campaigns
+- POST /api/admin/banner-campaigns
+- PATCH /api/admin/banner-campaigns/:id
+- DELETE /api/admin/banner-campaigns/:id
+- POST /api/admin/banner-campaigns/:id/duplicate
+- GET /api/admin/integrations/tracking
+- PATCH /api/admin/integrations/tracking
+- GET /api/admin/whatsapp/status
+- POST /api/admin/whatsapp/connect
+- POST /api/admin/whatsapp/regenerate-qr
+- POST /api/admin/whatsapp/disconnect
+- GET /api/admin/whatsapp/diagnostics
+- POST /api/admin/whatsapp/test
+- GET /api/admin/whatsapp/campaigns
+- POST /api/admin/whatsapp/campaigns
+- POST /api/admin/whatsapp/campaigns/:id/send
+- GET /api/admin/winners/config
+- PATCH /api/admin/winners/config
+- GET /api/admin/winners/demo
+- POST /api/admin/winners/demo
+- DELETE /api/admin/winners/demo/:id
+- GET /api/admin/experiments
+- POST /api/admin/experiments
+- PATCH /api/admin/experiments/:id
+- GET /api/admin/home-layout
+- PATCH /api/admin/home-layout
+- GET /api/admin/cpf-api
+- POST /api/admin/cpf-api/test
+- GET /api/admin/dotfy/config
+- PATCH /api/admin/dotfy/config
+- GET /api/admin/dotfy/diagnostics
+- GET /api/admin/dotfy/preflight
+- GET /api/admin/dotfy/splits/sent
+- GET /api/admin/dotfy/splits/received
+- GET /api/admin/dotfy/seller
+- GET /api/admin/dotfy/balance
+- POST /api/admin/dotfy/test-pending
+- POST /api/admin/dotfy/test
+- GET /api/admin/payonpag/config
+- PATCH /api/admin/payonpag/config
+- GET /api/admin/payonpag/diagnostics
+- GET /api/admin/payonpag/preflight
+- GET /api/admin/payonpag/splits/sent
+- GET /api/admin/payonpag/splits/received
+- GET /api/admin/payonpag/seller
+- GET /api/admin/payonpag/balance
+- POST /api/admin/payonpag/test-pending
+- POST /api/admin/payonpag/test

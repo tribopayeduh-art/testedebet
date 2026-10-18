@@ -1,0 +1,13 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - netlify/functions/api.mjs
+PASS - TypeScript/TSX :: PASS src/App.tsx
+PASS src/AdminApp.tsx
+PASS src/pages/AuthPage.tsx
+PASS - parseMoneyBR exists
+PASS - normalized amount correct
+PASS - fixed min R$10
+PASS - R$10 preset
+PASS - provider total_amount numeric
+PASS - item price numeric
+PASS - detailed invalid amount

@@ -1,0 +1,17 @@
+node_modules
+dist
+.env
+.env.local
+.firebase
+firebase-debug.log
+node_modules/
+dist/
+.netlify/
+.wa-auth/
+*.log
+secrets/
+server/firebase-service-account.json
+firebase-service-account.json
+*.pem
+*.key
+**/firebase-service-account*.json

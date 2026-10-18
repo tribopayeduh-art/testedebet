@@ -1,0 +1,17 @@
+PASS - node --check server/index.mjs
+PASS - node --check server/platform-defaults.mjs
+PASS - node --check netlify/functions/api.mjs
+PASS - TypeScript/TSX parse :: PASS src/App.tsx
+PASS src/AdminApp.tsx
+PASS src/pages/AuthPage.tsx
+PASS src/lib/adminApi.ts
+PASS - Provider hasError handled
+PASS - Provider PIX required
+PASS - Provider transaction id required
+PASS - Admin preflight
+PASS - Player preflight
+PASS - Firestore readiness
+PASS - Netlify client IP
+PASS - Payment provider logs
+PASS - Frontend money parser
+PASS - Money parser regression :: {'10': 10.0, '10.00': 10.0, '10,00': 10.0, 'R$ 10,00': 10.0, '1.234,56': 1234.56}

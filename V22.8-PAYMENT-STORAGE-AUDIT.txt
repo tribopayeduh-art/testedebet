@@ -1,0 +1,17 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - netlify/functions/api.mjs
+PASS - TypeScript/TSX :: PASS src/App.tsx
+PASS src/AdminApp.tsx
+PASS src/pages/AuthPage.tsx
+PASS src/lib/adminApi.ts
+PASS src/lib/data.ts
+PASS - Netlify Blobs dependency
+PASS - Deposit no Firestore Admin blocker
+PASS - REST profile fallback
+PASS - Payment blob ledger
+PASS - Hybrid status reconcile
+PASS - Hybrid webhook
+PASS - Wallet summary endpoint
+PASS - Frontend wallet summary
+PASS - iGameWin idempotent credit

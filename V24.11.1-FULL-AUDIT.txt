@@ -1,0 +1,27 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - server/whatsapp.mjs
+PASS - scripts/test-parser.mjs
+PASS - TypeScript/TSX syntax
+PASS - iGameWin parser fixtures
+PASS - Design Studio route/menu
+PASS - Admin visual config saved
+PASS - Theme runtime RTDB
+PASS - Theme API fallback
+PASS - Home drag/drop
+PASS - Home layout REST fallback
+PASS - Home layout whitelist
+PASS - Logo upload Storage
+PASS - Storage rule design
+PASS - Admin email storage
+PASS - Auth dynamic brand
+PASS - Dynamic bottom nav
+PASS - Dynamic desktop nav
+PASS - Preview mobile/desktop
+PASS - Language BR default
+PASS - Language locale controls
+PASS - CPF auto lookup
+PASS - PayOnPag deposit route
+PASS - Withdrawal fee preview
+PASS - Winners feed
+PASS - iGameWin games route

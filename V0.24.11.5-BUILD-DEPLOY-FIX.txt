@@ -1,0 +1,45 @@
+AMORA BET v0.24.11.5 — BUILD / VPS DEPLOY FIX
+=============================================
+
+CORREÇÕES
+---------
+1. Corrigido TypeScript:
+   AccessDenied agora recebe corretamente `message?: string`.
+   Isso resolve:
+   TS2322: Property 'message' does not exist on type 'IntrinsicAttributes'.
+
+2. deploy/update-vps.sh agora:
+   - cria automaticamente o usuário Linux `amorabet` se ele não existir;
+   - cria diretórios necessários;
+   - verifica Node/npm/PM2;
+   - preserva .env.local, secrets, .wa-auth e caches privados;
+   - instala dependências;
+   - executa auditoria;
+   - executa build ANTES de trocar o frontend publicado;
+   - só publica `dist` depois de um build válido;
+   - valida nginx antes de reload;
+   - inicia o processo PM2 se ele ainda não existir ou faz reload se existir;
+   - executa health check depois da publicação;
+   - falha de forma explícita se /api/health não responder.
+
+3. deploy/install-vps.sh:
+   - criação consistente do usuário `amorabet`;
+   - validação obrigatória de dist/index.html antes de publicar.
+
+4. package.json:
+   - versão 0.24.11.5;
+   - novo script `npm run predeploy:vps`.
+
+VALIDAÇÕES EXECUTADAS
+---------------------
+PASS - node --check server/index.mjs
+PASS - bash -n deploy/update-vps.sh
+PASS - bash -n deploy/install-vps.sh
+PASS - npm run prod:audit (20 verificações)
+
+OBSERVAÇÃO SOBRE BUILD LOCAL
+----------------------------
+O npm install completo neste ambiente excedeu o timeout da ferramenta.
+Na VPS do usuário, porém, as dependências instalaram corretamente e o build
+chegou até um único erro TypeScript em AccessDenied; esse erro foi corrigido
+nesta versão.

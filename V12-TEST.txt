@@ -1,0 +1,9 @@
+PASS - player history
+PASS - player bonuses
+PASS - player notifications
+PASS - affiliate
+PASS - responsible gaming
+PASS - security
+PASS - admin responsible
+PASS - notification publish backend
+PASS - player summary backend

@@ -1,0 +1,211 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with balances, status, and responsible gaming limits",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "role": { "type": "string", "enum": ["user", "admin", "agent"] },
+        "status": { "type": "string", "enum": ["ACTIVE", "SUSPENDED", "SELF_EXCLUDED", "BLOCKED"] },
+        "walletBalance": { "type": "number" },
+        "balance": { "type": "number" },
+        "bonusBalance": { "type": "number" },
+        "totalDeposits": { "type": "number" },
+        "kycStatus": { "type": "string", "enum": ["NOT_STARTED", "PENDING", "APPROVED", "REJECTED"] },
+        "influencer": { "type": "boolean" },
+        "phone": { "type": "string" },
+        "cpf": { "type": "string" },
+        "pixKey": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["email", "role", "status", "walletBalance"]
+    },
+    "Favorite": {
+      "title": "Favorite",
+      "description": "Favorite casino game for a user",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "code": { "type": "string" },
+        "name": { "type": "string" },
+        "providerCode": { "type": "string" },
+        "image": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "code", "providerCode"]
+    },
+    "GameTransaction": {
+      "title": "GameTransaction",
+      "description": "Bet or win record from game provider",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "gameCode": { "type": "string" },
+        "providerCode": { "type": "string" },
+        "type": { "type": "string", "enum": ["BET", "WIN", "REFUND"] },
+        "amount": { "type": "number" },
+        "balanceAfter": { "type": "number" },
+        "roundId": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "gameCode", "type", "amount"]
+    },
+    "PaymentRequest": {
+      "title": "PaymentRequest",
+      "description": "PIX deposit or withdrawal request",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "type": { "type": "string", "enum": ["DEPOSIT", "WITHDRAWAL"] },
+        "amount": { "type": "number" },
+        "status": { "type": "string", "enum": ["PENDING", "PAID", "FAILED", "REJECTED", "CANCELLED"] },
+        "pixKey": { "type": "string" },
+        "qrCode": { "type": "string" },
+        "qrCodeText": { "type": "string" },
+        "externalId": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["uid", "type", "amount", "status"]
+    },
+    "SupportTicket": {
+      "title": "SupportTicket",
+      "description": "Customer support ticket",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "message": { "type": "string" },
+        "status": { "type": "string", "enum": ["OPEN", "IN_PROGRESS", "RESOLVED", "CLOSED"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "message", "status"]
+    },
+    "KycRequest": {
+      "title": "KycRequest",
+      "description": "KYC identity verification record",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "documentType": { "type": "string" },
+        "documentNumber": { "type": "string" },
+        "documentUrl": { "type": "string" },
+        "status": { "type": "string", "enum": ["PENDING", "APPROVED", "REJECTED"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "status"]
+    },
+    "SystemSettings": {
+      "title": "SystemSettings",
+      "description": "Platform global configuration",
+      "type": "object",
+      "properties": {
+        "brandName": { "type": "string" },
+        "currency": { "type": "string" },
+        "minDeposit": { "type": "number" },
+        "maintenanceMode": { "type": "boolean" },
+        "registrationEnabled": { "type": "boolean" },
+        "depositsEnabled": { "type": "boolean" },
+        "withdrawalsEnabled": { "type": "boolean" }
+      }
+    },
+    "SystemHomeLayout": {
+      "title": "SystemHomeLayout",
+      "description": "Home page layout and section ordering",
+      "type": "object",
+      "properties": {
+        "sections": { "type": "array" }
+      }
+    },
+    "WinnerDemo": {
+      "title": "WinnerDemo",
+      "description": "Real-time or simulated recent winner item",
+      "type": "object",
+      "properties": {
+        "username": { "type": "string" },
+        "gameName": { "type": "string" },
+        "amount": { "type": "number" },
+        "provider": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["username", "gameName", "amount"]
+    },
+    "UserNotification": {
+      "title": "UserNotification",
+      "description": "In-app notifications for users",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "read": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "title", "message"]
+    },
+    "ArchivedUser": {
+      "title": "ArchivedUser",
+      "description": "Archived user or lead snapshot stored in restore vault to save Firestore reads",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "phone": { "type": "string" },
+        "cpf": { "type": "string" },
+        "walletBalance": { "type": "number" },
+        "balance": { "type": "number" },
+        "bonusBalance": { "type": "number" },
+        "archiveReason": { "type": "string" },
+        "archivedAt": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "archiveReason", "archivedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "UserProfile",
+      "description": "User profile with balance, status, and verification details"
+    },
+    "/archived_users/{archivedId}": {
+      "schema": "ArchivedUser",
+      "description": "Restore vault collection containing archived players and purged leads to save Firestore reads"
+    },
+    "/favorites/{favoriteId}": {
+      "schema": "Favorite",
+      "description": "User saved game favorites"
+    },
+    "/game_transactions/{transactionId}": {
+      "schema": "GameTransaction",
+      "description": "Historical bet and win records"
+    },
+    "/payment_requests/{requestId}": {
+      "schema": "PaymentRequest",
+      "description": "Deposit and withdrawal transactions"
+    },
+    "/supportTickets/{ticketId}": {
+      "schema": "SupportTicket",
+      "description": "User support tickets"
+    },
+    "/kyc_requests/{requestId}": {
+      "schema": "KycRequest",
+      "description": "Identity verification submissions"
+    },
+    "/system/{settingDoc}": {
+      "schema": "SystemSettings",
+      "description": "Platform settings, home layout, and configurations"
+    },
+    "/winners_demo/{winnerId}": {
+      "schema": "WinnerDemo",
+      "description": "Recent winner notifications"
+    },
+    "/user_notifications/{notificationId}": {
+      "schema": "UserNotification",
+      "description": "Notifications delivered to users"
+    }
+  }
+}

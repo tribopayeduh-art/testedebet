@@ -1,0 +1,13 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - TypeScript/TSX
+PASS - Admin toggle
+PASS - Admin amount
+PASS - Header language icon
+PASS - RU option
+PASS - JP option
+PASS - Real claim endpoint
+PASS - Atomic transaction
+PASS - One per account
+PASS - Wallet credit
+PASS - iGameWin sync

@@ -1,0 +1,1366 @@
+{
+  "checkedAt": "2026-10-09T16:34:25.318Z",
+  "sourceFilesScanned": 50,
+  "limitations": [
+    "Static source inventory: variable URLs/methods require manual inspection.",
+    "Route presence does not prove authenticated behavior or external integration."
+  ],
+  "calls": [
+    {
+      "file": "src/AdminApp.tsx",
+      "line": 72,
+      "call": "adminApi",
+      "route": "url",
+      "method": "GET",
+      "status": "MANUAL_DYNAMIC_REVIEW"
+    },
+    {
+      "file": "src/AdminApp.tsx",
+      "line": 177,
+      "call": "adminApi",
+      "route": "/api/admin/me",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/AdminApp.tsx",
+      "line": 186,
+      "call": "adminApi",
+      "route": "/api/admin/bootstrap-defaults",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/AdminApp.tsx",
+      "line": 188,
+      "call": "adminApi",
+      "route": "/api/admin/system-readiness",
+      "method": "GET",
+      "status": "PARTIAL_STATIC_RESPONSE"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 157,
+      "call": "fetch",
+      "route": "/api/wallet/summary",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 270,
+      "call": "fetch",
+      "route": "/api/system/settings",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 607,
+      "call": "fetch",
+      "route": "/api/player/language-bonus/claim",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 882,
+      "call": "fetch",
+      "route": "/api/winners-feed",
+      "method": "GET",
+      "status": "PLACEHOLDER_EMPTY"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 1142,
+      "call": "fetch",
+      "route": "/api/banner-events",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 1712,
+      "call": "fetch",
+      "route": "/api/wallet/dotfy/deposit/:param0/status",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 1765,
+      "call": "fetch",
+      "route": "/api/wallet/dotfy/deposit?amount=:param0",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 2541,
+      "call": "fetch",
+      "route": "/api/wallet/dotfy/deposit?amount=:param0",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 2592,
+      "call": "fetch",
+      "route": "/api/wallet/dotfy/status/:param0",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 2844,
+      "call": "fetch",
+      "route": "/api/wallet/withdraw-preview",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 2891,
+      "call": "fetch",
+      "route": "/api/player/kyc-request",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 2922,
+      "call": "fetch",
+      "route": "/api/wallet/withdraw-request-v2",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 3569,
+      "call": "fetch",
+      "route": "/api/player/kyc-request",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 3851,
+      "call": "fetch",
+      "route": "/api/winners-feed",
+      "method": "GET",
+      "status": "PLACEHOLDER_EMPTY"
+    },
+    {
+      "file": "src/App.tsx",
+      "line": 4061,
+      "call": "fetch",
+      "route": "/api/game_launch",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/lib/adminApi.ts",
+      "line": 49,
+      "call": "fetch",
+      "route": "path",
+      "method": "GET",
+      "status": "MANUAL_DYNAMIC_REVIEW"
+    },
+    {
+      "file": "src/lib/adminAssets.ts",
+      "line": 18,
+      "call": "fetch",
+      "route": "/api/admin/assets",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/lib/adminLocalFallback.ts",
+      "line": 474,
+      "call": "fetch",
+      "route": "/api/admin/whatsapp/test",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/lib/affiliateTracking.ts",
+      "line": 231,
+      "call": "fetch",
+      "route": "/api/affiliates/track-click",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/lib/affiliateTracking.ts",
+      "line": 369,
+      "call": "fetch",
+      "route": "/api/affiliates/track-registration",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/lib/auth.ts",
+      "line": 67,
+      "call": "fetch",
+      "route": "/api/player/sync-profile",
+      "method": "POST",
+      "status": "PROFILE_TRIGGER_NOOP"
+    },
+    {
+      "file": "src/lib/igamewin.ts",
+      "line": 69,
+      "call": "fetch",
+      "route": "url",
+      "method": "GET",
+      "status": "MANUAL_DYNAMIC_REVIEW"
+    },
+    {
+      "file": "src/lib/marketing.ts",
+      "line": 89,
+      "call": "fetch",
+      "route": "/api/integrations/tracking",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/lib/supabase.ts",
+      "line": 35,
+      "call": "fetch",
+      "route": "path",
+      "method": "DYNAMIC",
+      "status": "MANUAL_DYNAMIC_REVIEW"
+    },
+    {
+      "file": "src/lib/supabaseData.ts",
+      "line": 43,
+      "call": "supabaseRequest",
+      "route": "/api/supabase/responsible-limits",
+      "method": "POST",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/lib/supabaseData.ts",
+      "line": 45,
+      "call": "supabaseRequest",
+      "route": "/api/supabase/self-exclusion",
+      "method": "POST",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/AuthPage.tsx",
+      "line": 76,
+      "call": "fetch",
+      "route": "/api/system/settings",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/AffiliatesPage.tsx",
+      "line": 27,
+      "call": "adminApi",
+      "route": "/api/admin/affiliates",
+      "method": "GET",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/AffiliatesPage.tsx",
+      "line": 45,
+      "call": "adminApi",
+      "route": "/api/admin/affiliates",
+      "method": "POST",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/AuditPage.tsx",
+      "line": 9,
+      "call": "adminApi",
+      "route": "/api/admin/audit",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/BonusesPage.tsx",
+      "line": 18,
+      "call": "adminApi",
+      "route": "/api/admin/bonuses",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/BonusesPage.tsx",
+      "line": 41,
+      "call": "adminApi",
+      "route": "/api/admin/bonuses",
+      "method": "POST",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/BonusesPage.tsx",
+      "line": 50,
+      "call": "adminApi",
+      "route": "/api/admin/bonuses/:param0",
+      "method": "PATCH",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/BonusesPage.tsx",
+      "line": 57,
+      "call": "adminApi",
+      "route": "/api/admin/bonuses/:param0",
+      "method": "DELETE",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/DashboardPage.tsx",
+      "line": 20,
+      "call": "adminApi",
+      "route": "/api/admin/dashboard",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/DashboardPage.tsx",
+      "line": 21,
+      "call": "adminApi",
+      "route": "/api/admin/finance/dashboard",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/DashboardPage.tsx",
+      "line": 22,
+      "call": "adminApi",
+      "route": "/api/admin/operations/health",
+      "method": "GET",
+      "status": "PARTIAL_STATIC_RESPONSE"
+    },
+    {
+      "file": "src/pages/admin/DotfyPage.tsx",
+      "line": 30,
+      "call": "adminApi",
+      "route": "/api/admin/dotfy/config",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/DotfyPage.tsx",
+      "line": 31,
+      "call": "adminApi",
+      "route": "/api/admin/dotfy/diagnostics",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/DotfyPage.tsx",
+      "line": 46,
+      "call": "adminApi",
+      "route": "/api/admin/dotfy/seller",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/DotfyPage.tsx",
+      "line": 47,
+      "call": "adminApi",
+      "route": "/api/admin/dotfy/balance",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/DotfyPage.tsx",
+      "line": 86,
+      "call": "adminApi",
+      "route": "/api/admin/dotfy/config",
+      "method": "PATCH",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/DotfyPage.tsx",
+      "line": 95,
+      "call": "adminApi",
+      "route": "/api/admin/dotfy/preflight",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/DotfyPage.tsx",
+      "line": 118,
+      "call": "adminApi",
+      "route": "/api/admin/dotfy/test-pending",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/ExperimentsPage.tsx",
+      "line": 12,
+      "call": "adminApi",
+      "route": "/api/admin/experiments",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/ExperimentsPage.tsx",
+      "line": 17,
+      "call": "adminApi",
+      "route": "/api/admin/experiments",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/ExperimentsPage.tsx",
+      "line": 25,
+      "call": "adminApi",
+      "route": "/api/admin/experiments/:param0",
+      "method": "PATCH",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/FinancePage.tsx",
+      "line": 33,
+      "call": "adminApi",
+      "route": "/api/admin/payments",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/FinancePage.tsx",
+      "line": 34,
+      "call": "adminApi",
+      "route": "/api/admin/finance/dashboard",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/FinancePage.tsx",
+      "line": 35,
+      "call": "adminApi",
+      "route": "/api/admin/finance/queue-config",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/FinancePage.tsx",
+      "line": 52,
+      "call": "adminApi",
+      "route": "/api/admin/finance/sync",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/FinancePage.tsx",
+      "line": 66,
+      "call": "adminApi",
+      "route": "/api/admin/finance/queue-config",
+      "method": "PATCH",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/FinancePage.tsx",
+      "line": 82,
+      "call": "adminApi",
+      "route": "/api/admin/payments/:param0",
+      "method": "PATCH",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/FinancePage.tsx",
+      "line": 90,
+      "call": "adminApi",
+      "route": "/api/admin/payments/:param0/reconcile",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/GamesAdminPage.tsx",
+      "line": 40,
+      "call": "adminApi",
+      "route": "/api/admin/game-overrides",
+      "method": "GET",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/GamesAdminPage.tsx",
+      "line": 81,
+      "call": "adminApi",
+      "route": "/api/admin/game-overrides/:param0",
+      "method": "PATCH",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/HomeBuilderPage.tsx",
+      "line": 15,
+      "call": "adminApi",
+      "route": "/api/admin/home-layout",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/HomeBuilderPage.tsx",
+      "line": 30,
+      "call": "adminApi",
+      "route": "/api/admin/home-layout",
+      "method": "PATCH",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/IgamewinPage.tsx",
+      "line": 13,
+      "call": "adminApi",
+      "route": "/api/admin/igamewin/status",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/IgamewinPage.tsx",
+      "line": 19,
+      "call": "adminApi",
+      "route": "/api/admin/igamewin/refresh-catalog",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/IgamewinPage.tsx",
+      "line": 27,
+      "call": "adminApi",
+      "route": "/api/admin/igamewin/game-logs?limit=50",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/KycPage.tsx",
+      "line": 18,
+      "call": "adminApi",
+      "route": "/api/admin/users?limit=100",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/KycPage.tsx",
+      "line": 81,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0",
+      "method": "PATCH",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/NotificationsPage.tsx",
+      "line": 11,
+      "call": "adminApi",
+      "route": "/api/admin/notifications",
+      "method": "GET",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/NotificationsPage.tsx",
+      "line": 16,
+      "call": "adminApi",
+      "route": "/api/admin/notifications",
+      "method": "POST",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/NotificationsPage.tsx",
+      "line": 25,
+      "call": "adminApi",
+      "route": "/api/admin/notifications/:param0/publish",
+      "method": "POST",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/PromotionsPage.tsx",
+      "line": 27,
+      "call": "adminApi",
+      "route": "/api/admin/banner-campaigns",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/PromotionsPage.tsx",
+      "line": 70,
+      "call": "adminApi",
+      "route": "path",
+      "method": "DYNAMIC",
+      "status": "MANUAL_DYNAMIC_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/PromotionsPage.tsx",
+      "line": 77,
+      "call": "adminApi",
+      "route": "/api/admin/banner-campaigns/:param0",
+      "method": "PATCH",
+      "status": "BANNER_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/PromotionsPage.tsx",
+      "line": 78,
+      "call": "adminApi",
+      "route": "/api/admin/banner-campaigns/:param0/duplicate",
+      "method": "POST",
+      "status": "BANNER_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/PromotionsPage.tsx",
+      "line": 79,
+      "call": "adminApi",
+      "route": "/api/admin/banner-campaigns/:param0",
+      "method": "DELETE",
+      "status": "BANNER_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/ReportsPage.tsx",
+      "line": 10,
+      "call": "adminApi",
+      "route": "/api/admin/reports",
+      "method": "GET",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/ResponsibleAdminPage.tsx",
+      "line": 10,
+      "call": "adminApi",
+      "route": "/api/admin/responsible-gaming",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/RiskPage.tsx",
+      "line": 11,
+      "call": "adminApi",
+      "route": "/api/admin/risk",
+      "method": "GET",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/RiskPage.tsx",
+      "line": 18,
+      "call": "adminApi",
+      "route": "/api/admin/risk/:param0/action",
+      "method": "POST",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/SettingsPage.tsx",
+      "line": 76,
+      "call": "adminApi",
+      "route": "/api/admin/configuration",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/SettingsPage.tsx",
+      "line": 372,
+      "call": "adminApi",
+      "route": "/api/admin/configuration",
+      "method": "PATCH",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/StaffPage.tsx",
+      "line": 10,
+      "call": "adminApi",
+      "route": "/api/admin/staff",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/StaffPage.tsx",
+      "line": 15,
+      "call": "adminApi",
+      "route": "/api/admin/staff/:param0/role",
+      "method": "POST",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/StaffPage.tsx",
+      "line": 22,
+      "call": "adminApi",
+      "route": "/api/admin/staff/:param0/disable",
+      "method": "POST",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/SupportPage.tsx",
+      "line": 9,
+      "call": "adminApi",
+      "route": "/api/admin/support",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/SupportPage.tsx",
+      "line": 14,
+      "call": "adminApi",
+      "route": "/api/admin/support/:param0",
+      "method": "PATCH",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/TrackingPage.tsx",
+      "line": 34,
+      "call": "adminApi",
+      "route": "/api/admin/integrations/tracking",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/TrackingPage.tsx",
+      "line": 35,
+      "call": "adminApi",
+      "route": "/api/admin/tracking/meta-analytics",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/TrackingPage.tsx",
+      "line": 66,
+      "call": "adminApi",
+      "route": "/api/admin/integrations/tracking",
+      "method": "PATCH",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 64,
+      "call": "adminApi",
+      "route": "url",
+      "method": "GET",
+      "status": "MANUAL_DYNAMIC_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 136,
+      "call": "adminApi",
+      "route": "/api/admin/leads/restore-status",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 137,
+      "call": "adminApi",
+      "route": "/api/admin/leads/archived?limit=100&q=:param0",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 157,
+      "call": "adminApi",
+      "route": "/api/admin/leads/run-cleanup",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 178,
+      "call": "adminApi",
+      "route": "endpoint",
+      "method": "POST",
+      "status": "MANUAL_DYNAMIC_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 191,
+      "call": "adminApi",
+      "route": "/api/admin/leads/purge-archived",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 250,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0",
+      "method": "PATCH",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 266,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0/wallet-adjustment",
+      "method": "POST",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 1540,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0/details",
+      "method": "GET",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 1590,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0",
+      "method": "PATCH",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 1647,
+      "call": "adminApi",
+      "route": "/api/admin/payments/:param0/reconcile",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 1653,
+      "call": "adminApi",
+      "route": "/api/admin/payments/:param0/approve",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 1660,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0/details",
+      "method": "GET",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 1692,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0/wallet-adjustment",
+      "method": "POST",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 1714,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0/details",
+      "method": "GET",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 1726,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0/zero-balance",
+      "method": "POST",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 1736,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0/details",
+      "method": "GET",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 1752,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0/grant-bonus",
+      "method": "POST",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 1767,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0/details",
+      "method": "GET",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 1778,
+      "call": "adminApi",
+      "route": "/api/admin/risk/:param0/action",
+      "method": "POST",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 2204,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0",
+      "method": "PATCH",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "line": 2992,
+      "call": "adminApi",
+      "route": "/api/admin/users/:param0/wallet-adjustment",
+      "method": "POST",
+      "status": "ADMIN_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/VisualBuilderPage.tsx",
+      "line": 41,
+      "call": "adminApi",
+      "route": "/api/admin/configuration",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/VisualBuilderPage.tsx",
+      "line": 42,
+      "call": "adminApi",
+      "route": "/api/admin/home-layout",
+      "method": "GET",
+      "status": "READ_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/VisualBuilderPage.tsx",
+      "line": 94,
+      "call": "adminApi",
+      "route": "/api/admin/configuration",
+      "method": "PATCH",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/VisualBuilderPage.tsx",
+      "line": 95,
+      "call": "adminApi",
+      "route": "/api/admin/home-layout",
+      "method": "PATCH",
+      "status": "CORE_IMPLEMENTED_AUTH_TEST_REQUIRED"
+    },
+    {
+      "file": "src/pages/admin/WhatsAppPage.tsx",
+      "line": 20,
+      "call": "adminApi",
+      "route": "/api/admin/whatsapp/status",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/WhatsAppPage.tsx",
+      "line": 21,
+      "call": "adminApi",
+      "route": "/api/admin/whatsapp/campaigns",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/WhatsAppPage.tsx",
+      "line": 22,
+      "call": "adminApi",
+      "route": "/api/admin/whatsapp/diagnostics",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/WhatsAppPage.tsx",
+      "line": 37,
+      "call": "adminApi",
+      "route": "/api/admin/whatsapp/connect",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/WhatsAppPage.tsx",
+      "line": 47,
+      "call": "adminApi",
+      "route": "/api/admin/whatsapp/regenerate-qr",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/WhatsAppPage.tsx",
+      "line": 57,
+      "call": "adminApi",
+      "route": "/api/admin/whatsapp/disconnect",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/WhatsAppPage.tsx",
+      "line": 63,
+      "call": "adminApi",
+      "route": "/api/admin/whatsapp/test",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/WhatsAppPage.tsx",
+      "line": 64,
+      "call": "adminApi",
+      "route": "/api/admin/whatsapp/campaigns",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/WhatsAppPage.tsx",
+      "line": 65,
+      "call": "adminApi",
+      "route": "/api/admin/whatsapp/campaigns/:param0/send",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/WinnersAdminPage.tsx",
+      "line": 20,
+      "call": "adminApi",
+      "route": "/api/admin/winners/config",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/WinnersAdminPage.tsx",
+      "line": 21,
+      "call": "adminApi",
+      "route": "/api/admin/winners/demo",
+      "method": "GET",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/WinnersAdminPage.tsx",
+      "line": 35,
+      "call": "adminApi",
+      "route": "/api/admin/winners/config",
+      "method": "PATCH",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/WinnersAdminPage.tsx",
+      "line": 66,
+      "call": "adminApi",
+      "route": "/api/admin/winners/demo",
+      "method": "POST",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    },
+    {
+      "file": "src/pages/admin/WinnersAdminPage.tsx",
+      "line": 76,
+      "call": "adminApi",
+      "route": "/api/admin/winners/demo/:param0",
+      "method": "DELETE",
+      "status": "MIGRATION_PENDING_OR_REVIEW"
+    }
+  ],
+  "firebaseImports": [
+    {
+      "file": "src/AdminApp.tsx",
+      "module": "firebase/auth"
+    },
+    {
+      "file": "src/App.tsx",
+      "module": "firebase/auth"
+    },
+    {
+      "file": "src/App.tsx",
+      "module": "firebase/storage"
+    },
+    {
+      "file": "src/lib/adminLocalFallback.ts",
+      "module": "firebase/firestore"
+    },
+    {
+      "file": "src/lib/affiliateTracking.ts",
+      "module": "firebase/firestore"
+    },
+    {
+      "file": "src/lib/auth.ts",
+      "module": "firebase/auth"
+    },
+    {
+      "file": "src/lib/auth.ts",
+      "module": "firebase/firestore"
+    },
+    {
+      "file": "src/lib/data.ts",
+      "module": "firebase/firestore"
+    },
+    {
+      "file": "src/lib/firebase.ts",
+      "module": "firebase/app"
+    },
+    {
+      "file": "src/lib/firebase.ts",
+      "module": "firebase/auth"
+    },
+    {
+      "file": "src/lib/firebase.ts",
+      "module": "firebase/firestore"
+    },
+    {
+      "file": "src/lib/firebase.ts",
+      "module": "firebase/storage"
+    },
+    {
+      "file": "src/lib/firebase.ts",
+      "module": "firebase/database"
+    },
+    {
+      "file": "src/lib/marketing.ts",
+      "module": "firebase/firestore"
+    },
+    {
+      "file": "src/lib/runtimeDb.ts",
+      "module": "firebase/database"
+    },
+    {
+      "file": "src/lib/supabase.ts",
+      "module": "firebase/auth"
+    },
+    {
+      "file": "src/pages/admin/BonusesPage.tsx",
+      "module": "firebase/storage"
+    },
+    {
+      "file": "src/pages/admin/UsersPage.tsx",
+      "module": "firebase/firestore"
+    }
+  ],
+  "staticAssets": [
+    {
+      "asset": "/brand/zerobet-icon.svg",
+      "exists": true
+    },
+    {
+      "asset": "/icons/casino-game.svg",
+      "exists": true
+    },
+    {
+      "asset": "/icons/slot-machine.svg",
+      "exists": true
+    },
+    {
+      "asset": "/icons/poker-chip.svg",
+      "exists": true
+    },
+    {
+      "asset": "/icons/slot-winner.svg",
+      "exists": true
+    },
+    {
+      "asset": "/brand/zerobet-logo.svg",
+      "exists": true
+    },
+    {
+      "asset": "/language/brasil.svg",
+      "exists": true
+    },
+    {
+      "asset": "/language/russia.svg",
+      "exists": true
+    },
+    {
+      "asset": "/language/japao.svg",
+      "exists": true
+    },
+    {
+      "asset": "/banners/desafio-tiger-mobile.png",
+      "exists": true
+    },
+    {
+      "asset": "/banners/zerobet-stories-cta.png",
+      "exists": true
+    },
+    {
+      "asset": "/banners/popupdeposito001.png",
+      "exists": true
+    },
+    {
+      "asset": "/banners/bannerborah1.png",
+      "exists": true
+    },
+    {
+      "asset": "/banners/bannerborah2.png",
+      "exists": true
+    },
+    {
+      "asset": "/banners/ca100por500.png",
+      "exists": true
+    },
+    {
+      "asset": "/banners/ca200por1000.png",
+      "exists": true
+    },
+    {
+      "asset": "/banners/bonus300-900.png",
+      "exists": true
+    },
+    {
+      "asset": "/banners/bannerdep.png",
+      "exists": true
+    },
+    {
+      "asset": "/banners/200por1000.png",
+      "exists": true
+    },
+    {
+      "asset": "/banners/100por500.png",
+      "exists": true
+    },
+    {
+      "asset": "/banners/deposito-300.png",
+      "exists": true
+    },
+    {
+      "asset": "/games/medusas-stone.png",
+      "exists": true
+    },
+    {
+      "asset": "/games/fortune-tiger.png",
+      "exists": true
+    },
+    {
+      "asset": "/games/fortune-mouse.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/pragmatic.svg",
+      "exists": true
+    },
+    {
+      "asset": "/providers/pgsoft.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/spribe.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/evolution.svg",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-habanero.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-hacksaw.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-popiplay.svg",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-evoplay.svg",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-mascot.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-cq9.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-fachai.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-jdb.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-3oaks.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-jili.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-rubyplay.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-playson.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-ka.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-nolimitcity.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-amigo.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-amusnet.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-novomatic.jpg",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-micro.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-playngo.webp",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-yellowbat.webp",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-pt-759.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/cpgames.webp",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-popok.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-wazdan.svg",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-egt.svg",
+      "exists": true
+    },
+    {
+      "asset": "/providers/wg.webp",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-dreamtech.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-atg.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-tada.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-booongo.png",
+      "exists": true
+    },
+    {
+      "asset": "/providers/slot-amatic.png",
+      "exists": true
+    },
+    {
+      "asset": "/banners/desafio-tiger-home-v2.png",
+      "exists": true
+    },
+    {
+      "asset": "/language/russia.png",
+      "exists": true
+    },
+    {
+      "asset": "/language/japao.png",
+      "exists": true
+    }
+  ]
+}

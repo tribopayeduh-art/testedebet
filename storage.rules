@@ -1,0 +1,22 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() { return request.auth != null; }
+    function adminUser() {
+      return signedIn() && (
+        request.auth.token.admin == true || request.auth.token.role == "admin" ||
+        request.auth.token.email == "bancoiproxy@gmail.com" || request.auth.token.email == "administrador@gmail.com"
+      );
+    }
+    match /banners/{allPaths=**} { allow read: if true; allow write: if adminUser() && request.resource.size < 15 * 1024 * 1024; }
+    match /popups/{allPaths=**} { allow read: if true; allow write: if adminUser() && request.resource.size < 15 * 1024 * 1024; }
+    match /promotions/{allPaths=**} { allow read: if true; allow write: if adminUser() && request.resource.size < 15 * 1024 * 1024; }
+    match /system/{allPaths=**} { allow read: if true; allow write: if adminUser() && request.resource.size < 10 * 1024 * 1024; }
+    match /design/{allPaths=**} { allow read: if true; allow write: if adminUser() && request.resource.size < 10 * 1024 * 1024; }
+    match /avatars/{uid}/{allPaths=**} { allow read: if true; allow write: if signedIn() && (request.auth.uid == uid || adminUser()) && request.resource.size < 5 * 1024 * 1024; }
+    match /kyc/{uid}/{allPaths=**} {
+      allow read: if signedIn() && (request.auth.uid == uid || adminUser());
+      allow write: if signedIn() && request.auth.uid == uid && request.resource.size < 10 * 1024 * 1024;
+    }
+  }
+}

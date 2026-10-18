@@ -1,0 +1,6 @@
+PASS - dotenv local
+PASS - project id
+PASS - admin email frontend
+PASS - firestore frontend fallback
+PASS - admin me safe fallback
+PASS - env admin email

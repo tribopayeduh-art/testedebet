@@ -1,0 +1,18 @@
+V16 AUDIT / FIXES
+
+PASS - Corrigido login que podia sobrescrever role/admin/status/KYC/saldo
+PASS - Cadastro inicial cria defaults somente para documento novo
+PASS - Google login não reseta carteira nem permissões
+PASS - CPF validado no servidor antes de chamar API externa
+PASS - API key CPF somente no servidor
+PASS - Admin pode trocar API key sem expor chave atual
+PASS - Rate limit CPF: 10 consultas/minuto/IP
+PASS - Cache CPF: 24 horas
+PASS - Cache configuração: 60 segundos
+PASS - Timeout configurável
+PASS - Tratamento 400/401/403/404/429 da API CPF
+PASS - Cadastro +18 usando data retornada pela API
+PASS - Vite manualChunks para Firebase/icons/vendor
+PASS - Corrigidos erros JSX/comma operator herdados no Admin financeiro
+PASS - Corrigidos imports Trophy/Clock3 no Admin
+PASS - Corrigido import trackMarketingEvent no App

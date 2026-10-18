@@ -1,0 +1,26 @@
+PASS - node --check server/index.mjs
+PASS - node --check server/whatsapp.mjs
+PASS - node --check netlify/functions/api.mjs
+PASS - TypeScript/TSX parse :: PASS src/main.tsx
+PASS src/App.tsx
+PASS src/AdminApp.tsx
+PASS src/pages/AuthPage.tsx
+PASS src/lib/adminApi.ts
+PASS src/lib/adminLocalFallback.ts
+PASS src/lib/auth.ts
+PASS src/lib/data.ts
+PASS src/lib/firebase.ts
+PASS src/lib/marketing.ts
+PASS - serverless-http dependency
+PASS - Netlify API function
+PASS - Express exported
+PASS - No app.listen on Netlify
+PASS - API rewrite
+PASS - SPA rewrite
+PASS - Node 20
+PASS - PayOnPag uses Netlify URL
+PASS - Webhook serverless-safe
+PASS - Lazy App/Admin
+PASS - No missing marketing bootstrap
+PASS - Responsive safe area
+PASS - Admin responsive 430px

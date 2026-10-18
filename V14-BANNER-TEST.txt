@@ -1,0 +1,9 @@
+PASS - Backend CRUD banners
+PASS - Banner events
+PASS - Storage
+PASS - Admin editor
+PASS - Targeting
+PASS - Preview
+PASS - Dynamic home
+PASS - Dynamic popup
+PASS - ReactNode import

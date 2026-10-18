@@ -1,0 +1,11 @@
+.git/
+node_modules/
+dist/
+.wa-auth/
+*.log
+secrets/
+firebase-service-account.json
+*.pem
+*.key
+deploy/
+scripts/*.png

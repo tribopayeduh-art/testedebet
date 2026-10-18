@@ -1,0 +1,22 @@
+AMORA BET V24.1 — CORREÇÃO CPF / DEPÓSITO
+
+PASS - removido bloqueio "Seu cadastro precisa ter CPF validado antes de gerar o PIX"
+PASS - CPF do cadastro é cacheado localmente logo após criação da conta
+PASS - telefone do cadastro é cacheado junto com o CPF
+PASS - login recupera CPF/telefone do cache se o primeiro snapshot do Firestore vier incompleto
+PASS - tela de depósito usa Firestore -> cache do cadastro -> campos de recuperação
+PASS - depósito não depende mais de profile.cpf já ter carregado no React
+PASS - CPF e telefone ausentes podem ser informados na própria área de depósito
+PASS - correção do perfil é enviada ao Firestore em segundo plano e não atrasa a criação do PIX
+PASS - backend já aceita CPF/telefone enviados no body e não exige cpfValidated=true
+PASS - CPF continua com validação de formato no backend antes de chamar PayOnPag
+PASS - server/index.mjs syntax
+PASS - server/platform-defaults.mjs syntax
+PASS - App.tsx syntax
+PASS - AuthPage.tsx syntax
+PASS - auth.ts syntax
+PASS - data.ts syntax
+
+Fluxo novo:
+Cadastro -> CPF validado -> perfil Firestore + cache local
+Depósito -> CPF do perfil ou cache -> se ausente, campo inline -> PayOnPag

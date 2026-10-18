@@ -1,0 +1,22 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - server/whatsapp.mjs
+PASS - netlify/functions/api.mjs
+PASS - TypeScript/TSX syntax :: PASS src/main.tsx
+PASS src/App.tsx
+PASS src/AdminApp.tsx
+PASS src/pages/AuthPage.tsx
+PASS src/lib/firebase.ts
+PASS src/lib/auth.ts
+PASS src/lib/data.ts
+PASS src/lib/adminApi.ts
+PASS src/lib/adminLocalFallback.ts
+PASS - Bootstrap route
+PASS - PayOnPag DB seed
+PASS - CPF DB seed
+PASS - iGameWin DB seed
+PASS - Admin auto bootstrap
+PASS - Firebase public fallback
+PASS - No private SK in frontend
+PASS - No iGameWin token in frontend
+PASS - No CPF token in frontend

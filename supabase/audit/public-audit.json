@@ -1,0 +1,1210 @@
+{
+  "checkedAt": "2026-10-09T06:00:23.831Z",
+  "project": "https://humusyinebbvevrzafxm.supabase.co",
+  "mode": "supabase",
+  "serverSecretPresent": false,
+  "limitations": [
+    "Public key cannot inspect private player records or SQL metadata.",
+    "SQL audit must be run in Supabase SQL Editor.",
+    "Authenticated roles/uploads and financial integrations require separate testing."
+  ],
+  "tables": [
+    {
+      "table": "profiles",
+      "columns": [
+        "id",
+        "account_id",
+        "display_name",
+        "phone",
+        "cpf",
+        "birth_date",
+        "role",
+        "status",
+        "kyc_status",
+        "created_at",
+        "updated_at"
+      ],
+      "http": 401,
+      "code": "42501",
+      "classification": "anonymous_access_denied_expected",
+      "rowsInspected": 0
+    },
+    {
+      "table": "wallets",
+      "columns": [
+        "user_id",
+        "balance_cents",
+        "bonus_cents",
+        "currency",
+        "updated_at"
+      ],
+      "http": 401,
+      "code": "42501",
+      "classification": "anonymous_access_denied_expected",
+      "rowsInspected": 0
+    },
+    {
+      "table": "wallet_entries",
+      "columns": [
+        "id",
+        "user_id",
+        "amount_cents",
+        "balance_after_cents",
+        "kind",
+        "idempotency_key",
+        "metadata",
+        "created_at"
+      ],
+      "http": 401,
+      "code": "42501",
+      "classification": "anonymous_access_denied_expected",
+      "rowsInspected": 0
+    },
+    {
+      "table": "payment_requests",
+      "columns": [
+        "id",
+        "user_id",
+        "kind",
+        "amount_cents",
+        "status",
+        "external_id",
+        "metadata",
+        "created_at",
+        "updated_at"
+      ],
+      "http": 401,
+      "code": "42501",
+      "classification": "anonymous_access_denied_expected",
+      "rowsInspected": 0
+    },
+    {
+      "table": "game_transactions",
+      "columns": [
+        "id",
+        "user_id",
+        "provider",
+        "game_code",
+        "external_id",
+        "bet_cents",
+        "win_cents",
+        "metadata",
+        "created_at"
+      ],
+      "http": 401,
+      "code": "42501",
+      "classification": "anonymous_access_denied_expected",
+      "rowsInspected": 0
+    },
+    {
+      "table": "favorites",
+      "columns": [
+        "user_id",
+        "game_key",
+        "created_at"
+      ],
+      "http": 401,
+      "code": "42501",
+      "classification": "anonymous_access_denied_expected",
+      "rowsInspected": 0
+    },
+    {
+      "table": "user_notifications",
+      "columns": [
+        "id",
+        "user_id",
+        "title",
+        "body",
+        "read_at",
+        "created_at"
+      ],
+      "http": 401,
+      "code": "42501",
+      "classification": "anonymous_access_denied_expected",
+      "rowsInspected": 0
+    },
+    {
+      "table": "support_tickets",
+      "columns": [
+        "id",
+        "user_id",
+        "subject",
+        "message",
+        "status",
+        "created_at"
+      ],
+      "http": 401,
+      "code": "42501",
+      "classification": "anonymous_access_denied_expected",
+      "rowsInspected": 0
+    },
+    {
+      "table": "affiliates",
+      "columns": [
+        "user_id",
+        "code",
+        "status",
+        "commission_cents",
+        "clicks",
+        "registrations",
+        "created_at"
+      ],
+      "http": 401,
+      "code": "42501",
+      "classification": "anonymous_access_denied_expected",
+      "rowsInspected": 0
+    },
+    {
+      "table": "referrals",
+      "columns": [
+        "user_id",
+        "affiliate_id",
+        "created_at"
+      ],
+      "http": 401,
+      "code": "42501",
+      "classification": "anonymous_access_denied_expected",
+      "rowsInspected": 0
+    },
+    {
+      "table": "responsible_limits",
+      "columns": [
+        "user_id",
+        "daily_deposit_cents",
+        "weekly_deposit_cents",
+        "monthly_deposit_cents",
+        "session_minutes",
+        "self_excluded_until",
+        "updated_at"
+      ],
+      "http": 401,
+      "code": "42501",
+      "classification": "anonymous_access_denied_expected",
+      "rowsInspected": 0
+    },
+    {
+      "table": "bonuses",
+      "columns": [
+        "id",
+        "title",
+        "active",
+        "rules",
+        "created_at"
+      ],
+      "http": 200,
+      "code": null,
+      "classification": "public_read_ok",
+      "rowsInspected": 0
+    },
+    {
+      "table": "bonus_grants",
+      "columns": [
+        "id",
+        "user_id",
+        "bonus_id",
+        "amount_cents",
+        "status",
+        "idempotency_key",
+        "created_at"
+      ],
+      "http": 401,
+      "code": "42501",
+      "classification": "anonymous_access_denied_expected",
+      "rowsInspected": 0
+    },
+    {
+      "table": "banner_campaigns",
+      "columns": [
+        "id",
+        "title",
+        "placement",
+        "image_path",
+        "active",
+        "position",
+        "action",
+        "targeting",
+        "starts_at",
+        "ends_at",
+        "created_at"
+      ],
+      "http": 200,
+      "code": null,
+      "classification": "public_read_ok",
+      "rowsInspected": 0
+    },
+    {
+      "table": "platform_config",
+      "columns": [
+        "key",
+        "value",
+        "updated_at"
+      ],
+      "http": 200,
+      "code": null,
+      "classification": "public_read_ok",
+      "rowsInspected": 1
+    },
+    {
+      "table": "admin_audit_logs",
+      "columns": [
+        "id",
+        "actor_id",
+        "action",
+        "target_id",
+        "metadata",
+        "created_at"
+      ],
+      "http": 401,
+      "code": "42501",
+      "classification": "anonymous_access_denied_expected",
+      "rowsInspected": 0
+    }
+  ],
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/firebase-project",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/igamewin/diagnostics",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/providers",
+      "status": "public_provider_read_only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/igamewin/providers",
+      "status": "public_provider_read_only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/assets/game-image",
+      "status": "public_provider_read_only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/games",
+      "status": "public_provider_read_only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/igamewin/games",
+      "status": "public_provider_read_only"
+    },
+    {
+      "method": "GET",
+      "path": "/api/money_info",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/user_create",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/user/sync",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/user_sync",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/game_launch",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/igamewin/launch",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/player/game-logs",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/summary",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/balance",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet/deposit-request",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet/withdraw-request",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/me",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/bootstrap-defaults",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/system-readiness",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/dashboard",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/users",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/users/:uid",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/users/:uid/wallet-adjustment",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/users/:uid/details",
+      "status": "supabase_core_implemented_requires_sql004_and_auth_test"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/users/:uid/zero-balance",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/users/:uid/tags",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/leads/restore-status",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/restorage/status",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/leads/archived",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/restorage/list",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/leads/run-cleanup",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/restorage/run-cleanup",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/leads/restore-user/:uid",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/restorage/restore/:uid",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/leads/restore-as-influencer/:uid",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/restorage/restore-vip/:uid",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/leads/purge-archived",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/restorage/purge",
+      "status": "migration_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/leads/settings",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/finance/queue-config",
+      "status": "migration_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/finance/queue-config",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/payments",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/payments/:id",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/payments/:id/reconcile",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/payments/:id/approve",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/support",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/support/:id",
+      "status": "supabase_core_implemented_requires_sql004_and_auth_test"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/promotions",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/promotions",
+      "status": "migration_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/promotions/:id",
+      "status": "migration_pending"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/admin/promotions/:id",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/settings",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/settings",
+      "status": "supabase_core_implemented_requires_sql004_and_auth_test"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/igamewin/status",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/igamewin/refresh-catalog",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/igamewin/game-logs",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/igamewin/user-create",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/igamewin/user-deposit",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/igamewin/user-withdraw",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/igamewin/withdraw-reset",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/igamewin/rtp",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/audit",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/kyc",
+      "status": "migration_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/kyc/:uid",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/risk",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/risk/:uid/action",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/affiliates",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/affiliates",
+      "status": "migration_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/affiliates/:id",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/affiliates/track-click",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/affiliates/track-registration",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/affiliates/info/:code",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/bonuses",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/bonuses",
+      "status": "supabase_core_implemented_requires_sql004_and_auth_test"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/bonuses/:id",
+      "status": "supabase_core_implemented_requires_sql004_and_auth_test"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/admin/bonuses/:id",
+      "status": "supabase_core_implemented_requires_sql004_and_auth_test"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/users/:uid/grant-bonus",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/notifications",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/notifications",
+      "status": "migration_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/notifications/:id",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/game-overrides",
+      "status": "migration_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/game-overrides/:key",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/reports",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/staff",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/staff/:uid/role",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/staff/:uid/disable",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/player/summary",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/player/bonuses",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/player/notifications",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/player/notifications/:id/read",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/player/responsible-gaming",
+      "status": "migration_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/player/responsible-gaming/limits",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/player/responsible-gaming/self-exclusion",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/responsible-gaming",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/notifications/:id/publish",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/finance/dashboard",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/finance/sync",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/operations/health",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/assets",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/system/settings",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/configuration",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/configuration",
+      "status": "supabase_core_implemented_requires_sql004_and_auth_test"
+    },
+    {
+      "method": "POST",
+      "path": "/api/player/language-bonus/claim",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet/withdraw-preview",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/simulate-withdraw-fees",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet/withdraw-request-v2",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/player/kyc-request",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/kyc-requests",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/banner-campaigns",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/banner-campaigns",
+      "status": "supabase_banner_implemented_auth_test_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/banner-campaigns/:id",
+      "status": "supabase_banner_implemented_auth_test_pending"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/admin/banner-campaigns/:id",
+      "status": "supabase_banner_implemented_auth_test_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/banner-campaigns/:id/duplicate",
+      "status": "supabase_banner_implemented_auth_test_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/banner-campaigns",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/banner-events",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/integrations/tracking",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/integrations/tracking",
+      "status": "migration_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/integrations/tracking",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/whatsapp/status",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/whatsapp/connect",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/whatsapp/regenerate-qr",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/whatsapp/disconnect",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/whatsapp/diagnostics",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/whatsapp/test",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/whatsapp/campaigns",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/whatsapp/campaigns",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/whatsapp/campaigns/:id/send",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/winners-feed",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/winners/config",
+      "status": "migration_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/winners/config",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/winners/demo",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/winners/demo",
+      "status": "migration_pending"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/admin/winners/demo/:id",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/experiments",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/experiments",
+      "status": "migration_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/experiments/:id",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/home-layout",
+      "status": "supabase_read_implemented_auth_test_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/home-layout",
+      "status": "supabase_core_implemented_requires_sql004_and_auth_test"
+    },
+    {
+      "method": "GET",
+      "path": "/api/public/cpf/config",
+      "status": "migration_pending"
+    },
+    {
+      "method": "ALL",
+      "path": "/api/public/cpf/lookup",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/cpf-api",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/cpf-api/test",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/dotfy/config",
+      "status": "migration_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/dotfy/config",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/dotfy/diagnostics",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/dotfy/preflight",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/dotfy/splits/sent",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/dotfy/splits/received",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/dotfy/seller",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/dotfy/balance",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/dotfy/test-pending",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/dotfy/test",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/payonpag/config",
+      "status": "migration_pending"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/payonpag/config",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/payonpag/diagnostics",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/payonpag/preflight",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/payonpag/splits/sent",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/payonpag/splits/received",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/payonpag/seller",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/payonpag/balance",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/payonpag/test-pending",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/payonpag/test",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet/dotfy/deposit/:amount",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet/dotfy/deposit",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/dotfy/deposit/:requestId/status",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/dotfy/status/:requestId",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/status/:requestId",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/dotfy/preflight",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet/payonpag/deposit/:amount",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet/payonpag/deposit",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/payonpag/deposit/:requestId/status",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/payonpag/status/:requestId",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/payonpag/preflight",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet/dotfy/simulate-payment/:requestId",
+      "status": "migration_pending"
+    },
+    {
+      "method": "ALL",
+      "path": "/api/wallet/dotfy/debug-amount",
+      "status": "migration_pending"
+    },
+    {
+      "method": "ALL",
+      "path": "/api/wallet/payonpag/debug-amount",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/webhooks/dotfy",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/webhook/dotfy",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/webhooks/dotfy",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/webhook/dotfy",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/webhooks/charges",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/webhooks/charges",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/webhooks/pix",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/webhook/pix",
+      "status": "migration_pending"
+    },
+    {
+      "method": "POST",
+      "path": "/api/igamewin/callback",
+      "status": "migration_pending"
+    },
+    {
+      "method": "GET",
+      "path": "/previwslinks.png",
+      "status": "outside_supabase_api_guard"
+    }
+  ]
+}

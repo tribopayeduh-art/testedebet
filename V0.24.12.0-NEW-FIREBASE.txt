@@ -1,0 +1,44 @@
+AMORA BET v0.24.12.0 — NOVO FIREBASE
+====================================
+
+NOVO PROJETO
+------------
+Project ID: amorabet-f4405
+Auth Domain: amorabet-f4405.firebaseapp.com
+Realtime Database: https://amorabet-f4405-default-rtdb.firebaseio.com
+Storage: amorabet-f4405.firebasestorage.app
+Messaging Sender ID: 559598024702
+App ID: 1:559598024702:web:f9f028a9fb25100443f2af
+Measurement ID: G-D9W41Y9917
+
+PREPARADO NO CÓDIGO
+-------------------
+- Firebase Web aponta integralmente para o novo projeto.
+- Backend aponta para o novo projectId/databaseURL/storageBucket.
+- FIREBASE_WEB_API_KEY atualizada.
+- Schema e scripts de seed/reset apontam para o novo projeto.
+- ADMIN_EMAILS=admin.eduh@gmail.com.
+- CPF continua manual, obrigatório com 11 dígitos e sem API externa.
+- iGameWin/PayOnPag/WhatsApp permanecem no backend.
+- nenhuma credencial administrativa Firebase foi inventada.
+
+IMPORTANTE
+----------
+O Firebase Web config NÃO substitui a Service Account.
+Antes de rodar o backend no novo projeto, gere uma Service Account DO PROJETO
+amorabet-f4405 e instale-a na VPS em:
+
+/var/www/amora-bet/secrets/firebase-service-account.json
+
+O script `npm run firebase:project-check` bloqueia uma Service Account do projeto
+antigo para evitar autenticação cruzada e erros difíceis de diagnosticar.
+
+ESTRUTURA DO BANCO
+------------------
+Use `npm run firebase:bootstrap` depois de instalar a Service Account.
+Ele valida projeto + credencial e cria a estrutura limpa via db:seed.
+
+Para APAGAR E RECRIAR os dados do NOVO projeto no futuro:
+  npm run db:reset -- --confirm=DELETE-AMORABET-DATABASE
+
+Esse comando preserva Firebase Authentication e Storage.

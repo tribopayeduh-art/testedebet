@@ -1,0 +1,7 @@
+PASS - database reset scripts syntax
+PASS - database seed scripts syntax
+PASS - database audit scripts syntax
+PASS - production audit
+PASS - ADMIN_EMAILS deduplicated
+PASS - manual CPF / external CPF key disabled
+NOTE - destructive reset was NOT executed against the user's live Firebase from this environment.

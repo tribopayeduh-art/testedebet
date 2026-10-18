@@ -1,0 +1,14 @@
+V24.3 — banners, winners, tracking, catálogo e bônus
+
+- Banners públicos passam a assinar banner_campaigns diretamente no Firestore.
+- POPUP_HOME, POPUP_DEPOSIT, HOME_TOP, HOME_AFTER_FEATURED, HOME_MIDDLE, DEPOSIT_TOP, GAMES_TOP, PROMOTIONS_TOP e PROFILE_TOP agora possuem ponto real de renderização.
+- Ações ampliadas: jogos, jogo específico, provider, depósito, carteira, home, histórico, notificações, jogo responsável, promoções, bônus, afiliado, perfil e URL.
+- GAME/PROVIDER disparam abertura real via eventos da aplicação.
+- Central de vencedores usa feed real quando disponível e winners_demo como fallback público em tempo real.
+- Catálogo iGameWin recarrega automaticamente a cada 60s e quando a aba volta ao foco.
+- Tracking de PageView, GameOpen e BannerClick/Impression ativo.
+- Texto de CPF/telefone removido da tela de depósito.
+- Área de bônus aceita banner no Storage, tamanho 1:1/4:5/16:9/9:16, posição e CTA.
+- Banner enviado pelo usuário incluído como fallback principal da Home.
+
+Observação: não foi criado um mecanismo disfarçado de “bug de idioma” para conceder saldo. Uma promoção por idioma deve ser apresentada de forma transparente ao jogador, com termos claros.

@@ -1,0 +1,8 @@
+NACIONAL BET — CAPAS CLEAN
+
+Direção: fundo verde floresta fosco com gradiente suave, amplo espaço negativo, personagem central com iluminação de estúdio, logo discreta, título em fonte sem serifa e cor marfim.
+Evitar: moedas, explosões, brilhos neon, excesso de elementos e tipografia metálica.
+Produção: ferramenta integrada de geração de imagens.
+
+Prompt base:
+undefined

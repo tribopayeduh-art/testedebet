@@ -1,0 +1,13 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - netlify/functions/api.mjs
+PASS - TypeScript/TSX :: PASS src/pages/AuthPage.tsx
+PASS src/App.tsx
+PASS src/AdminApp.tsx
+PASS src/lib/auth.ts
+PASS - Auto lookup on 11 digits
+PASS - Direct digits passed to lookup
+PASS - GET query lookup
+PASS - Server GET/POST compatible
+PASS - Server reads query/body
+PASS - Auto fill name

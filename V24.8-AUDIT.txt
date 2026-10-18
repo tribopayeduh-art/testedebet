@@ -1,0 +1,10 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - TypeScript/TSX
+PASS - Popup closes on select
+PASS - Popup selector only
+PASS - Claim in home strip
+PASS - Portuguese requirement
+PASS - Deposit CTA
+PASS - Deposit navigation
+PASS - Balance update

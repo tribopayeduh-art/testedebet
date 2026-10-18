@@ -1,0 +1,63 @@
+PASS - desktop-app-frame possui fechamento duplo
+PASS - Gamepad2 importado
+PASS - Depositar aponta para tab deposit
+
+Trecho App.tsx:
+ 109:   if (authLoading) return <Splash />;
+ 110:   if (firebaseConfigured && !user) return <AuthPage />;
+ 111: 
+ 112:   return (
+ 113:     <div className="desktop-app-frame"><DesktopSidebar setTab={setTab} tab={tab}/><div className="app-shell">
+ 114:       <TopBar profile={profile} onProfile={() => setTab('profile')} />
+ 115: 
+ 116:       <main className="content">
+ 117:         {tab === 'home' && (
+ 118:           <HomePage
+ 119:             games={games}
+ 120:             providers={providers}
+ 121:             loading={catalogLoading}
+ 122:             error={catalogError}
+ 123:             onReload={loadCatalog}
+ 124:             onGame={setSelectedGame}
+ 125:             onGames={() => setTab('games')}
+ 126:             favoriteKeys={favoriteKeys}
+ 127:             onFavorite={onFavorite}
+ 128:           />
+ 129:         )}
+ 130:         {tab === 'games' && (
+ 131:           <GamesPage
+ 132:             games={visibleGames}
+ 133:             providers={providers}
+ 134:             loading={catalogLoading}
+ 135:             error={catalogError}
+ 136:             onReload={loadCatalog}
+ 137:             selectedProvider={selectedProvider}
+ 138:             setSelectedProvider={setSelectedProvider}
+ 139:             search={search}
+ 140:             setSearch={setSearch}
+ 141:             mode={mode}
+ 142:             setMode={setMode}
+ 143:             onGame={setSelectedGame}
+ 144:             favoriteKeys={favoriteKeys}
+ 145:             onFavorite={onFavorite}
+ 146:           />
+ 147:         )}
+ 148:         {tab === 'promos' && <PromosPage onWallet={() => setTab('wallet')} />}
+ 149:         {tab === 'deposit' && <DepositPage user={user} />}
+ 150:         {tab === 'wallet' && <WalletPage user={user} profile={profile} />}
+ 151:         {tab === 'profile' && <ProfilePage user={user} profile={profile} onSupport={() => setSupportOpen(true)} />}
+ 152:       </main>
+ 153: 
+ 154:       <BottomNav tab={tab} setTab={setTab} onMenu={() => setMenuOpen(true)} />
+ 155:       {menuOpen && <SideMenu onClose={() => setMenuOpen(false)} setTab={setTab} setMode={setMode} onSupport={() => setSupportOpen(true)} />}
+ 156:       {selectedGame && <GamePlayModal game={selectedGame} onClose={() => setSelectedGame(null)} currentUser={user} />}
+ 157:       {supportOpen && <SupportModal user={user} onClose={() => setSupportOpen(false)} />}
+ 158:     </div>
+ 159:     </div>
+ 160:   );
+ 161: }
+ 162: 
+ 163: function Splash() {
+ 164:   return <div className="loading-screen"><span className="brand-mark">A</span><strong>AMORA BET</strong><small>Carregando experiência...</small></div>;
+ 165: }
+ 166: 

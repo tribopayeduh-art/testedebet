@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import dotenv from 'dotenv';
+for(const path of ['.env.local','.env'])if(fs.existsSync(path))dotenv.config({path,override:false,quiet:true});
+const config=JSON.parse(fs.readFileSync('firebase-applet-config.json','utf8'));
+const backendProject=process.env.FIREBASE_PROJECT_ID||config.projectId;
+const frontendProject=process.env.VITE_FIREBASE_PROJECT_ID||config.projectId;
+const backendDatabase=process.env.FIRESTORE_DATABASE_ID||config.firestoreDatabaseId||'(default)';
+const frontendDatabase=process.env.VITE_FIRESTORE_DATABASE_ID||config.firestoreDatabaseId||'(default)';
+const checks={project:backendProject===frontendProject,database:backendDatabase===frontendDatabase,backend:(process.env.DATA_BACKEND||'firebase')==='firebase',frontend:(process.env.VITE_DATA_BACKEND||'firebase')==='firebase'};
+for(const [key,ok]of Object.entries(checks))console.log(`${ok?'PASS':'FAIL'} ${key}`);
+console.log(`Admin credential: ${process.env.FIREBASE_SERVICE_ACCOUNT_JSON||process.env.GOOGLE_APPLICATION_CREDENTIALS?'configured; requires live validation':'missing'}`);
+console.log('Configuration check only; remote connectivity not tested.');
+process.exit(Object.values(checks).every(Boolean)?0:1);

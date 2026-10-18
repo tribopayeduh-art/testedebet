@@ -1,0 +1,14 @@
+NACIONAL BET — PG SOFT
+
+Identidade verde, logo Nacional Bet, banners e 11 capas vinculadas aos códigos da API.
+
+Windows CMD: extraia o ZIP, abra o terminal na pasta extraída e execute em uma linha:
+npm ci && npm run dev
+
+Abra http://localhost:3000
+Requer Node.js 22 ou superior. As configurações existentes de API e banco foram preservadas.
+Os jogos dependem do catálogo e das credenciais da API; as capas não adicionam jogos ao provedor.
+
+Atualização: restaurados os banners originais da Nacional Bet; mantidas as 11 capas PG Soft.
+
+Atualização das capas: coleção clean, verde escuro fosco, personagens em destaque e tipografia simples. Os banners originais permanecem.

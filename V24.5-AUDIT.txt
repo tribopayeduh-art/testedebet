@@ -1,0 +1,13 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - TypeScript/TSX
+PASS - Config save REST fallback
+PASS - Influencer backend
+PASS - Influencer admin toggle
+PASS - Deposit eligibility
+PASS - Deposit CTA
+PASS - KYC camera capture
+PASS - KYC payout
+PASS - Winners iGameWin selector
+PASS - Winners random generator
+PASS - Winners save fallback

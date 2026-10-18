@@ -1,0 +1,14 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - TypeScript/TSX
+PASS - VisualBuilder section
+PASS - Drag and drop
+PASS - Live mobile desktop preview
+PASS - Logo upload
+PASS - Icon upload
+PASS - Theme backend
+PASS - Theme runtime
+PASS - Dynamic navigation labels
+PASS - Dynamic navigation icons
+PASS - Auth dynamic logo
+PASS - Storage design rule

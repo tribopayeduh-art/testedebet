@@ -1,0 +1,27 @@
+AMORA BET v0.24.11.7
+====================
+Correção do build da v0.24.11.6.
+
+CAUSA
+-----
+Ao remover o estado e as lógicas do validador de CPF, o bloco de estado
+`visualTheme / setVisualTheme` também foi removido acidentalmente de
+AuthPage.tsx, mas o JSX e o carregamento de /api/system/settings continuaram
+usando essas variáveis.
+
+CORREÇÃO
+--------
+- restaurado `visualTheme` e `setVisualTheme`;
+- mantidos defaults locais de marca/logo;
+- carregamento de `/api/system/settings` ficou resiliente a erro HTTP;
+- cleanup evita setState depois de unmount;
+- removidos imports de ícones CPF não utilizados;
+- validador de CPF continua removido;
+- ADMIN_EMAILS continua configurado para admin.eduh@gmail.com.
+
+VALIDAÇÕES
+----------
+- Node syntax backend
+- Bash syntax dos scripts VPS
+- production audit
+- inspeção de referências visualTheme/setVisualTheme

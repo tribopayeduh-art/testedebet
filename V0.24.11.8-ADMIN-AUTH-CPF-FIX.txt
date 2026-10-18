@@ -1,0 +1,25 @@
+AMORA BET v0.24.11.8
+====================
+
+ADMIN
+- ADMIN_EMAILS continua definido para admin.eduh@gmail.com.
+- Firebase ID Token continua obrigatório.
+- Primeiro tenta verifyIdToken() do Firebase Admin.
+- Se a VPS não conseguir acessar os certificados públicos do Google, usa
+  Firebase Identity Toolkit accounts:lookup para validar o ID Token.
+- Um token não validado nunca recebe acesso Admin.
+- Autorização continua baseada somente em ADMIN_UIDS/ADMIN_EMAILS do servidor.
+- O perfil users/{uid} é sincronizado como role=admin/admin=true depois que a
+  autorização real do backend é confirmada.
+
+CPF
+- CPF voltou ao formulário de cadastro.
+- Exige exatamente 11 dígitos.
+- Apenas formatação local; nenhuma chamada à API CPF.
+- CPF é salvo no perfil com cpfValidated=false.
+- A API CPF permanece desativada.
+
+SEGURANÇA
+- Nenhum bypass administrativo no frontend.
+- Nenhum acesso Admin apenas por documento Firestore.
+- Nenhum token completo é registrado em log.

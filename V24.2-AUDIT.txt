@@ -1,0 +1,16 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - TypeScript/TSX :: PASS src/App.tsx
+PASS src/AdminApp.tsx
+PASS src/lib/auth.ts
+
+PASS - administrador@gmail.com default admin
+PASS - configuredAdminEmails supports defaults array
+PASS - frontend bootstrap admin updated
+PASS - admin visual fallback updated
+PASS - deposit hides CPF question
+PASS - deposit hides phone question
+PASS - deposit explains auto loaded
+PASS - backend pulls profile on click
+PASS - backend uses stored phone first
+PASS - backend uses stored cpf first

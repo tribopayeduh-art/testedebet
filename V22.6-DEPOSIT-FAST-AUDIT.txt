@@ -1,0 +1,14 @@
+PASS - server/index.mjs
+PASS - server/platform-defaults.mjs
+PASS - netlify/functions/api.mjs
+PASS - TypeScript/TSX :: PASS src/App.tsx
+PASS src/AdminApp.tsx
+PASS src/pages/AuthPage.tsx
+PASS src/lib/adminApi.ts
+PASS - No redundant firestore health in deposit
+PASS - Payment profile cache
+PASS - QR and DB parallel
+PASS - Server timing
+PASS - Latency response
+PASS - Frontend timeout
+PASS - Immediate progress

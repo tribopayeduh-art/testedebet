@@ -1,0 +1,4 @@
+PASS - App has desktop frame
+PASS - App has desktop sidebar
+PASS - CSS desktop breakpoint
+PASS - CSS bottom nav hidden desktop

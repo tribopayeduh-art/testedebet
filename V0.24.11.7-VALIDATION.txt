@@ -1,0 +1,5 @@
+PASS - visualTheme state restored
+PASS - CPF validator remains removed
+PASS - admin.eduh@gmail.com preserved
+PASS - production audit
+Dependencies not installed here; VPS will run the authoritative npm run build.

@@ -1,0 +1,13 @@
+PASS - novo Firebase Web configurado
+PASS - backend configurado para amorabet-f4405
+PASS - Realtime Database novo configurado
+PASS - Storage novo configurado
+PASS - FIREBASE_WEB_API_KEY configurada
+PASS - admin.eduh@gmail.com preservado como admin
+PASS - CPF manual 11 dígitos / API externa desativada
+PASS - scripts de bootstrap/reset/auditoria sintaticamente válidos
+PASS - scripts de VPS/Cloud Shell sintaticamente válidos
+PASS - production audit
+PASS - nenhum identificador do Firebase antigo no runtime
+NOTE - a Service Account do novo projeto não é inventada nem embutida; deve ser gerada no Cloud Shell e instalada na VPS.
+NOTE - npm install/build completo deve ser executado na VPS, onde as dependências do projeto são instaladas.

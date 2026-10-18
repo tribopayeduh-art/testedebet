@@ -1,0 +1,15 @@
+PASS - server/index.mjs
+PASS - server/whatsapp.mjs
+PASS - TypeScript :: PASS src/pages/AuthPage.tsx
+PASS src/App.tsx
+PASS src/AdminApp.tsx
+PASS src/lib/auth.ts
+PASS src/lib/data.ts
+PASS - PayOnPag private DB path
+PASS - PayOnPag REST DB fallback
+PASS - PayOnPag secret hidden
+PASS - Phone required register
+PASS - Phone saved register
+PASS - Deposit has no phone input
+PASS - Deposit has no CPF preview
+PASS - Deposit shows only holder name

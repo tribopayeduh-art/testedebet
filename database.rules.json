@@ -1,0 +1,24 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "runtime": {
+      "publicSettings": {
+        ".read": true,
+        ".write": "auth != null && (auth.token.email == 'bancoiproxy@gmail.com' || root.child('runtime/admins').child(auth.uid).val() == true)"
+      },
+      "users": {
+        "$uid": {
+          ".read": "auth != null && (auth.uid == $uid || (auth.token.email == 'bancoiproxy@gmail.com' || root.child('runtime/admins').child(auth.uid).val() == true))",
+          ".write": "auth != null && (auth.uid == $uid || (auth.token.email == 'bancoiproxy@gmail.com' || root.child('runtime/admins').child(auth.uid).val() == true))"
+        }
+      },
+      "admins": {
+        "$uid": {
+          ".read": "auth != null && auth.uid == $uid",
+          ".write": false
+        }
+      }
+    }
+  }
+}

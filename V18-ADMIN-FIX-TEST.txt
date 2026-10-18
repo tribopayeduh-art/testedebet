@@ -1,0 +1,10 @@
+PASS - node --check server/index.mjs
+PASS - node --check server/whatsapp.mjs
+PASS - ADMIN_UIDS configured
+PASS - ADMIN_EMAILS configured
+PASS - UID bootstrap
+PASS - Email bootstrap
+PASS - REST role fallback
+PASS - Token refresh retry
+PASS - Readiness endpoint
+PASS - Admin validation server-first

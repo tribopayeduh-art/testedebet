@@ -1,0 +1,11 @@
+AMORA BET V22
+PASS - API CPF persiste no Firestore ou retorna erro explícito
+PASS - PayOnPag persiste no Firestore ou retorna erro explícito
+PASS - mensagens do Admin confirmam caminho salvo
+PASS - KYC documento/selfie/comprovante/dados
+PASS - upload Firebase Storage
+PASS - status UNDER_REVIEW / APPROVED / REJECTED / RESUBMISSION_REQUIRED
+PASS - painel Admin de análise KYC
+PASS - botão Gerenciar no mobile
+PASS - server syntax
+PASS - App/Admin TSX syntax

@@ -1,0 +1,6 @@
+Amora BET v0.24.11.6
+- Validador/consulta de CPF removido do cadastro.
+- API de CPF desativada no backend.
+- ADMIN_EMAILS=admin.eduh@gmail.com.
+- Demais integrações preservadas.
+- Auditoria de produção aprovada.

@@ -1,0 +1,23 @@
+AMORA BET V24 — AUDITORIA
+PASS - official_logo_asset
+PASS - new_firebase_project
+PASS - new_rtdb
+PASS - runtime_db
+PASS - cpf_fast_cache
+PASS - payon_fast_config
+PASS - admin_pagination
+PASS - storage_popup_path
+PASS - preview_popup
+PASS - kyc_mobile_100dvh
+PASS - database_rules
+PASS - storage_rules
+PASS - old_firebase_removed
+
+VALIDAÇÃO EXECUTADA:
+PASS - node --check server/index.mjs
+PASS - node --check server/platform-defaults.mjs
+PASS - TypeScript/TSX syntax parse
+PASS - firebase.json/database.rules.json/package.json parse
+
+LIMITAÇÃO:
+O build completo npm run build não foi executado porque a instalação npm não concluiu neste ambiente. Execute npm install && npm run build no computador antes de produção.

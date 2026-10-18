@@ -1,0 +1,54 @@
+{
+  "system/settings": {
+    "brandName": "Trevo da Sorte",
+    "currency": "BRL",
+    "locale": "pt-BR",
+    "minDeposit": 10,
+    "maintenanceMode": false,
+    "registrationEnabled": true,
+    "depositsEnabled": true,
+    "withdrawalsEnabled": true,
+    "responsibleGamingEnabled": true
+  },
+  "system/winners_config": {
+    "enabled": true,
+    "source": "MIXED",
+    "refreshSeconds": 18,
+    "maxRows": 8
+  },
+  "system/home_layout": {
+    "sections": [
+      "BANNER",
+      "CATEGORIES",
+      "FEATURED",
+      "WINNERS",
+      "PRAGMATIC_LIVE",
+      "MOST_PLAYED",
+      "FAST_GAMES",
+      "NEW_RELEASES",
+      "PROMO_BANNER",
+      "SLOTS",
+      "LIVE_CASINO",
+      "PROVIDERS",
+      "AMORA_CLUB",
+      "AFFILIATE",
+      "RESPONSIBLE",
+      "POPULAR"
+    ]
+  },
+  "public_config/marketing_tracking": {
+    "enabled": true,
+    "metaPixelId": "",
+    "tiktokPixelId": "",
+    "googleAdsId": "",
+    "googleConversions": {}
+  },
+  "system_private/cpf_api": {
+    "provider": "MANUAL_CPF",
+    "enabled": false,
+    "requiredOnSignup": true,
+    "manualOnly": true,
+    "exactDigits": 11,
+    "configured": false
+  }
+}

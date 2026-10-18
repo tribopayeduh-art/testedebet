@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-09T06:05:24.932Z",
+  "results": [
+    {
+      "path": "/brand/zerobet-logo.svg",
+      "method": "GET",
+      "status": 200,
+      "expected": 200,
+      "pass": true
+    },
+    {
+      "path": "/api/assets/game-image?url=https%3A%2F%2Fexample.com%2Fa.png&sig=invalid",
+      "method": "GET",
+      "status": 403,
+      "expected": 403,
+      "pass": true
+    },
+    {
+      "path": "/api/admin/me",
+      "method": "GET",
+      "status": 401,
+      "expected": 401,
+      "pass": true
+    },
+    {
+      "path": "/api/wallet/dotfy/deposit",
+      "method": "POST",
+      "status": 503,
+      "expected": 503,
+      "pass": true
+    },
+    {
+      "path": "/api/player/kyc-request",
+      "method": "POST",
+      "status": 503,
+      "expected": 503,
+      "pass": true
+    },
+    {
+      "path": "/api/system/settings",
+      "method": "GET",
+      "status": 200,
+      "expected": 200,
+      "pass": true
+    }
+  ],
+  "firebaseStartupError": false,
+  "legacyReconcileObserved": false,
+  "limitations": [
+    "No authenticated operation, financial transaction or external game launch was executed.",
+    "Provider URL replaced only in this test process; provider integration not tested."
+  ]
+}

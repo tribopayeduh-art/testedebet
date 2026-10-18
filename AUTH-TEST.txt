@@ -1,0 +1,6 @@
+PASS - Auth page V3
+PASS - Google login
+PASS - Firestore profile
+PASS - Password reset
+PASS - Remember me
+PASS - Responsive CSS

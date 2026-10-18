@@ -1,0 +1,6 @@
+ADDED - ALTERED-FILES-V0.24.11.5.txt
+ADDED - V0.24.11.5-BUILD-DEPLOY-FIX.txt
+MODIFIED - deploy/install-vps.sh
+MODIFIED - deploy/update-vps.sh
+MODIFIED - package.json
+MODIFIED - src/AdminApp.tsx

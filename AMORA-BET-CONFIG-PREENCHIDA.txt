@@ -1,0 +1,13 @@
+AMORA BET — CONFIGURAÇÃO DE PRODUÇÃO
+
+As credenciais privadas foram removidas do código-fonte e deste arquivo.
+Use .env.local na VPS (copie de .env.example) e NÃO publique esse arquivo.
+
+Credenciais privadas que devem existir somente no servidor:
+- FIREBASE_SERVICE_ACCOUNT_JSON ou GOOGLE_APPLICATION_CREDENTIALS
+- IGAMEWIN_AGENT_CODE / IGAMEWIN_AGENT_TOKEN
+- CPF_API_KEY
+- PAYONPAG_API_SECRET / PAYONPAG_RECIPIENT_ID
+- ADMIN_EMAILS / ADMIN_UIDS
+
+O frontend deve possuir apenas as variáveis públicas VITE_FIREBASE_*.

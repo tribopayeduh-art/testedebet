@@ -1,0 +1,28 @@
+AMORA BET v0.24.11.9 — DATABASE REBUILD
+=======================================
+
+This release contains a controlled full reset for Firebase data.
+
+`npm run db:reset -- --confirm=DELETE-AMORABET-DATABASE`
+deletes:
+- every Firestore document, including nested subcollections;
+- the entire Firebase Realtime Database root.
+
+It intentionally DOES NOT delete:
+- Firebase Authentication users;
+- Firebase Storage files;
+- service-account credentials;
+- provider secrets in .env.local.
+
+After deletion it recreates a clean schema and:
+- system/settings
+- system/winners_config
+- system/home_layout
+- public_config/marketing_tracking
+- system_private/payonpag
+- system_private/igamewin
+- system_private/cpf_api (manual CPF, API disabled)
+- users/{uid} for each ADMIN_EMAILS account found in Firebase Authentication.
+
+Admin authority remains server-side ADMIN_EMAILS / ADMIN_UIDS.
+Current configured admin: admin.eduh@gmail.com.

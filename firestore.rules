@@ -1,0 +1,274 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function self(uid) { return signedIn() && request.auth.uid == uid; }
+    function adminUser() {
+      return signedIn() &&
+        (
+          request.auth.token.get("admin", false) == true ||
+          request.auth.token.get("isAdmin", false) == true ||
+          request.auth.token.get("role", "").lower() in ["admin", "administrator", "superadmin"] ||
+          (
+            "email" in request.auth.token &&
+            request.auth.token.email.lower() in [
+              "nacional@gmail.com",
+              "admin.zero@gmail.com",
+              "admin.borah@gmail.com",
+              "admin.resenha@gmail.com",
+              "admin1.eduh@gmail.com",
+              "tribopayeduh@gmail.com",
+              "system.service.admin@resenhabet.internal",
+              "admin.eduh1@gmail.com",
+              "bancoiproxy@gmail.com",
+              "administrador@gmail.com",
+              "zero@gmail.com",
+              "admin.luis@gmail.com"
+            ]
+          ) ||
+          (
+            request.auth.token.get("email", "") != "" &&
+            request.auth.token.get("email", "").lower() in [
+              "nacional@gmail.com",
+              "admin.zero@gmail.com",
+              "admin.borah@gmail.com",
+              "admin.resenha@gmail.com",
+              "admin1.eduh@gmail.com",
+              "tribopayeduh@gmail.com",
+              "system.service.admin@resenhabet.internal",
+              "admin.eduh1@gmail.com",
+              "bancoiproxy@gmail.com",
+              "administrador@gmail.com",
+              "zero@gmail.com",
+              "admin.luis@gmail.com"
+            ]
+          ) ||
+          exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
+          (
+            exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+            (
+              get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get("role", "").lower() in ["admin", "administrator", "superadmin"] ||
+              get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get("admin", false) == true ||
+              get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get("isAdmin", false) == true
+            )
+          )
+        );
+    }
+
+    function languageSettings() {
+      return exists(/databases/$(database)/documents/system/settings)
+        ? get(/databases/$(database)/documents/system/settings).data
+        : {};
+    }
+
+    function languageBonusEligible(userData) {
+      let s = languageSettings();
+      let deposits = userData.get("totalDeposits", 0);
+      let balance = userData.get("walletBalance", userData.get("balance", 0));
+      let firstDeposit = userData.get("firstDepositAmount", 0);
+      let influencer = userData.get("influencer", false);
+
+      return
+        (influencer == true && s.get("languageBonusInfluencerBypass", true) == true) ||
+        (
+          deposits >= s.get("languageBonusMinDeposit", 30) &&
+          (
+            !(deposits > 0 && balance < 100) ||
+            deposits >= s.get("languageBonusNewAccountThreshold", 100)
+          ) &&
+          (
+            !(firstDeposit >= s.get("languageBonusHighFirstDepositTrigger", 100)) ||
+            deposits >= s.get("languageBonusHighFirstDepositThreshold", 150)
+          )
+        );
+    }
+
+    function languageBonusUserUpdate(uid) {
+      let s = languageSettings();
+      let amount = s.get("languageBonusAmountBRL", 0);
+      let claimPath = /databases/$(database)/documents/language_bonus_claims/$(uid);
+
+      return
+        self(uid) &&
+        s.get("languageBonusEnabled", false) == true &&
+        amount > 0 &&
+        amount <= 100000 &&
+        !exists(claimPath) &&
+        existsAfter(claimPath) &&
+        getAfter(claimPath).data.uid == uid &&
+        getAfter(claimPath).data.amountBRL == amount &&
+        getAfter(claimPath).data.locale in ["RU", "JP"] &&
+        (
+          (getAfter(claimPath).data.locale == "RU" && s.get("languageBonusRussiaEnabled", true) == true) ||
+          (getAfter(claimPath).data.locale == "JP" && s.get("languageBonusJapanEnabled", true) == true)
+        ) &&
+        languageBonusEligible(resource.data) &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          "walletBalance", "balance", "bonusBalance", "totalBonuses",
+          "languageBonusClaimed", "languageBonusLocale", "lastBonusAt", "updatedAt"
+        ]) &&
+        request.resource.data.walletBalance == resource.data.get("walletBalance", resource.data.get("balance", 0)) + amount &&
+        request.resource.data.balance == resource.data.get("balance", resource.data.get("walletBalance", 0)) + amount &&
+        request.resource.data.get("bonusBalance", 0) == resource.data.get("bonusBalance", 0) + amount &&
+        request.resource.data.get("totalBonuses", 0) == resource.data.get("totalBonuses", 0) + amount &&
+        request.resource.data.languageBonusClaimed == true &&
+        request.resource.data.languageBonusLocale == getAfter(claimPath).data.locale;
+    }
+
+    match /users/{uid} {
+      allow get: if true;
+      allow list: if adminUser();
+      allow create, update: if true;
+      allow delete: if adminUser();
+    }
+
+    match /admins/{uid} {
+      allow read, write: if adminUser() || self(uid);
+    }
+
+    match /language_bonus_claims/{uid} {
+      allow read: if self(uid) || adminUser();
+      allow create: if self(uid) &&
+        uid == request.auth.uid &&
+        !exists(/databases/$(database)/documents/language_bonus_claims/$(uid)) &&
+        request.resource.data.keys().hasOnly([
+          "uid", "locale", "amountBRL", "promotion", "claimedAt", "source"
+        ]) &&
+        request.resource.data.uid == uid &&
+        request.resource.data.locale in ["RU", "JP"] &&
+        (
+          (request.resource.data.locale == "RU" && languageSettings().get("languageBonusRussiaEnabled", true) == true) ||
+          (request.resource.data.locale == "JP" && languageSettings().get("languageBonusJapanEnabled", true) == true)
+        ) &&
+        request.resource.data.amountBRL == languageSettings().get("languageBonusAmountBRL", 0) &&
+        request.resource.data.promotion == "LANGUAGE_BONUS" &&
+        languageSettings().get("languageBonusEnabled", false) == true &&
+        exists(/databases/$(database)/documents/users/$(uid)) &&
+        languageBonusEligible(get(/databases/$(database)/documents/users/$(uid)).data);
+      allow update, delete: if adminUser();
+    }
+
+    match /favorites/{id} {
+      allow get, delete: if signedIn() && (resource.data.uid == request.auth.uid || adminUser());
+      allow list: if signedIn();
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow update: if signedIn() && (resource.data.uid == request.auth.uid || adminUser());
+    }
+
+    match /game_transactions/{id} {
+      allow read, write: if true;
+    }
+
+    match /payment_requests/{id} {
+      allow get: if signedIn() && (resource.data.uid == request.auth.uid || adminUser());
+      allow list: if signedIn();
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow update, delete: if adminUser();
+    }
+
+    match /supportTickets/{id} {
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow get: if signedIn() && (resource.data.uid == request.auth.uid || adminUser());
+      allow list: if signedIn();
+      allow update, delete: if adminUser();
+    }
+
+    match /kyc_requests/{id} {
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow get: if adminUser() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow list: if signedIn();
+      allow update, delete: if adminUser();
+    }
+
+    match /promotions/{id} { allow read: if true; allow write: if adminUser(); }
+    match /bonuses/{id} { allow read: if true; allow write: if adminUser(); }
+    match /game_overrides/{id} { allow read: if true; allow write: if adminUser(); }
+    match /banner_campaigns/{id} { allow read: if true; allow write: if adminUser(); }
+    match /winners_demo/{id} { allow read: if true; allow write: if adminUser(); }
+
+    // Configurações públicas: nunca guardar tokens ou segredos aqui.
+    match /public_config/{id} {
+      allow read: if true;
+      allow write: if adminUser();
+    }
+
+    // Configurações operacionais do app.
+    match /system/{id} {
+      allow read: if true;
+      allow write: if adminUser();
+    }
+
+    // Tokens, API keys e segredos ficam somente para admins autenticados.
+    match /system_private/{id} {
+      allow read, write: if adminUser();
+    }
+
+    match /user_notifications/{id} {
+      allow get: if signedIn() && (resource.data.uid == request.auth.uid || adminUser());
+      allow list: if signedIn();
+      allow update: if signedIn() && (resource.data.uid == request.auth.uid || adminUser());
+      allow create, delete: if adminUser();
+    }
+
+    match /responsible_gaming_events/{id} {
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow get: if adminUser() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow list: if signedIn();
+      allow update, delete: if adminUser();
+    }
+
+    match /affiliates/{id} {
+      allow read: if true;
+      allow create: if signedIn();
+      allow update: if adminUser() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow delete: if adminUser();
+    }
+
+    match /affiliate_clicks/{id} {
+      allow create: if true;
+      allow get: if adminUser() || (signedIn() && resource.data.affiliateUid == request.auth.uid);
+      allow list: if signedIn();
+      allow update, delete: if adminUser();
+    }
+
+    match /affiliate_conversions/{id} {
+      allow create: if true;
+      allow get: if adminUser() || (signedIn() && resource.data.affiliateUid == request.auth.uid);
+      allow list: if signedIn();
+      allow update, delete: if adminUser();
+    }
+
+    match /affiliate_transactions/{id} {
+      allow create: if true;
+      allow get: if adminUser() || (signedIn() && resource.data.affiliateUid == request.auth.uid);
+      allow list: if signedIn();
+      allow update, delete: if adminUser();
+    }
+
+    match /archived_users/{id} {
+      allow read, write: if adminUser();
+    }
+
+    match /notification_campaigns/{id} { allow read, write: if adminUser(); }
+    match /experiments/{id} { allow read: if signedIn(); allow write: if adminUser(); }
+    match /whatsapp_campaigns/{id} { allow read, write: if adminUser(); }
+
+    // Logs operacionais: escrita somente por admin autenticado ou backend.
+    match /admin_audit_logs/{id} { allow read, create: if adminUser(); allow update, delete: if false; }
+    match /wallet_adjustments/{id} { allow read, create: if adminUser(); allow update, delete: if false; }
+    match /bonus_grants/{id} { allow read, create: if adminUser(); allow update, delete: if false; }
+    match /whatsapp_message_logs/{id} { allow read, create: if adminUser(); allow update, delete: if false; }
+    match /banner_events/{id} { allow read: if adminUser(); allow create: if true; allow update, delete: if false; }
+
+    match /recent_games/{id} {
+      allow get: if signedIn() && (resource.data.uid == request.auth.uid || adminUser());
+      allow list: if signedIn();
+      allow write: if adminUser();
+    }
+
+    match /test/{id} {
+      allow read: if true;
+      allow write: if adminUser();
+    }
+  }
+}

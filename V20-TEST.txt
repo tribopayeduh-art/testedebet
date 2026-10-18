@@ -1,0 +1,22 @@
+PASS - node --check server/index.mjs
+PASS - node --check server/whatsapp.mjs
+PASS - TypeScript transpile :: PASS src/AdminApp.tsx
+PASS src/App.tsx
+PASS src/pages/AuthPage.tsx
+PASS src/lib/adminApi.ts
+PASS src/lib/adminLocalFallback.ts
+PASS src/lib/data.ts
+PASS src/lib/marketing.ts
+PASS - PayOnPag create transaction
+PASS - PayOnPag api-secret header
+PASS - PayOnPag webhook
+PASS - PayOnPag reconciliation
+PASS - Idempotent credited flag
+PASS - PIX payload
+PASS - QR generated locally
+PASS - Admin PayOnPag page
+PASS - Admin click progress
+PASS - Admin prefetch
+PASS - GET cache
+PASS - Deposit polling
+PASS - Copy PIX

@@ -1,0 +1,11 @@
+PASS - server/index.mjs syntax
+PASS - deploy/update-vps.sh syntax
+PASS - deploy/install-vps.sh syntax
+PASS - production audit (20 verificações)
+PASS - TypeScript/TSX parse
+PASS - CPF manual obrigatório com exatamente 11 dígitos
+PASS - cadastro sem consulta externa de CPF
+PASS - ADMIN_EMAILS=admin.eduh@gmail.com
+PASS - validação Firebase ID Token via Admin SDK com fallback seguro Identity Toolkit
+PASS - perfil admin sincronizado no Firestore somente após autorização real
+NOTE - npm install/build real não foi concluído neste ambiente por limite de execução; a VPS executará npm run build no update-vps.sh.

@@ -1,0 +1,10 @@
+PASS - server/index.mjs
+PASS - server/whatsapp.mjs
+PASS - TypeScript :: PASS src/AdminApp.tsx
+PASS src/App.tsx
+PASS src/lib/adminApi.ts
+PASS - Test amount R$10
+PASS - Webhook async 200
+PASS - Polling fallback
+PASS - Production webhook enforcement
+PASS - Diagnostics endpoint

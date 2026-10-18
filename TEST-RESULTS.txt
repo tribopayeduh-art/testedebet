@@ -1,0 +1,38 @@
+AMORA BET v0.24.11.2 — RESULTADOS DE AUDITORIA/TESTES
+=====================================================
+
+EXECUTADO NESTE AMBIENTE
+------------------------
+PASS - npm run prod:audit (19 verificações)
+PASS - node --check server/index.mjs
+PASS - node --check scripts/production-audit.mjs
+PASS - node --check scripts/smoke-vps.mjs
+PASS - bash -n deploy/install-vps.sh
+PASS - bash -n deploy/update-vps.sh
+PASS - bash -n deploy/diagnose-vps.sh
+PASS - parse sintático TypeScript/TSX de src/ e vite.config.ts
+PASS - scan de segredos conhecidos/private keys
+PASS - frontend sem localhost:8787 / 127.0.0.1:8787
+PASS - frontend Admin sem adminLocalFallback
+PASS - frontend sem concessão Admin por e-mail hardcoded
+PASS - Firebase Admin bloqueia rotas autenticadas sem credencial
+PASS - ADMIN_EMAILS / ADMIN_UIDS são lidos do ambiente
+PASS - Nginx preparado para /api/ -> 127.0.0.1:8787
+PASS - PM2 ecosystem criado
+
+NÃO EXECUTADO AQUI
+------------------
+O npm install completo excedeu o tempo disponível neste ambiente, portanto
+não foi possível executar o build real do Vite com as dependências instaladas
+nem chamadas reais contra Firebase/iGameWin/PayOnPag/Baileys.
+
+NA VPS, EXECUTE:
+  npm install
+  npm run prod:audit
+  npm run build
+  BASE_URL=http://127.0.0.1:8787 npm run smoke
+
+Para teste Admin autenticado:
+  export ADMIN_ID_TOKEN='TOKEN_TEMPORARIO'
+  BASE_URL=http://127.0.0.1:8787 npm run smoke
+  unset ADMIN_ID_TOKEN

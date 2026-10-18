@@ -1,0 +1,9 @@
+PASS src/AdminApp.tsx
+PASS src/App.tsx
+PASS src/pages/AuthPage.tsx
+PASS src/lib/adminApi.ts
+PASS src/lib/adminLocalFallback.ts
+PASS src/lib/data.ts
+PASS src/lib/marketing.ts
+PASS server/index.mjs
+PASS server/whatsapp.mjs

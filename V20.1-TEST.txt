@@ -1,0 +1,11 @@
+PASS - node --check server/index.mjs
+PASS - node --check server/whatsapp.mjs
+PASS - TypeScript :: PASS src/AdminApp.tsx
+PASS src/App.tsx
+PASS src/lib/adminApi.ts
+PASS src/lib/data.ts
+PASS - Recipient default backend
+PASS - Split conditional
+PASS - Pending test endpoint
+PASS - Pending test UI
+PASS - Secret not hardcoded in frontend

@@ -1,0 +1,9 @@
+PASS - Pragmatic Live filter
+PASS - Lançamentos Pragmatic Live
+PASS - HomePage setTab prop fixed
+PASS - HomePage setProvider prop fixed
+PASS - Finance API
+PASS - Health API
+PASS - Finance dashboard
+PASS - Finance chart
+PASS - Sidebar no scroll

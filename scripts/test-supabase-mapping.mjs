@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {mapSupabaseRow,supabaseAdminRead} from '../server/supabase-admin-reads.mjs';
+test('cash values are converted exactly once from cents',()=>{const p=mapSupabaseRow('payment_requests',{kind:'WITHDRAWAL',amount_cents:12345,user_id:'u',created_at:'date'});assert.equal(p.amount,123.45);assert.equal(p.type,'WITHDRAW');assert.equal(p.uid,'u');});
+test('banner images and actions match the actual frontend fields',()=>{const b=mapSupabaseRow('banner_campaigns',{image_path:'https://example.test/image.png',position:3,action:{type:'DEPOSIT',target:'200'}});assert.equal(b.desktopImage,b.mobileImage);assert.equal(b.desktopImage,'https://example.test/image.png');assert.equal(b.actionType,'DEPOSIT');assert.equal(b.sortOrder,3);});
+test('bonus rules cannot overwrite trusted id/title/activation columns',()=>{const b=mapSupabaseRow('bonuses',{id:'trusted',title:'title',active:false,rules:{id:'bad',active:true,percent:300}});assert.equal(b.id,'trusted');assert.equal(b.active,false);assert.equal(b.percent,300);});
+test('read errors are exposed instead of reporting an empty successful dataset',async()=>{const client={from:()=>({select:()=>({limit:async()=>({error:{message:'permission denied'}})})})};await assert.rejects(supabaseAdminRead('/api/admin/payments',client),/permission denied/);});
